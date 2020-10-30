@@ -3,3 +3,33 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+
+```{r setup, message=FALSE}
+library(tidyverse)
+library(tibble)
+library(readr)
+```
+
+# Spørsmål 1 
+
+Filen ddf_concepts.csv inneholder all mulig informasjon og ikke datasett, men 596 beskrivelser. 
+Man kan for eksempel se at de har beskrivelser av alder av første ekteskap, arbeidsledighet, sykdom, dødsfall og alkoholkonsum.
+
+# Spørsmål 2
+
+Filen ddf--entities-geo--country.csv gir oss et inblikk i ulike land, inntektensgrupperinger, hvilken religion de tilhører, annen geografisk informajson som for eksempel størrelse på landet og lokasjon, breddegrader osv. 
+
+# Spørsmål 3 
+
+ Filen dff-gapminder inneholder en tabell over regionene som er med i FN.
+ 
+# Spørsmål 4 
+ 
+```{r g_c}
+library(readr)
+g_c <- read.csv("Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo--country.csv")
+as_tibble(g_c)
+View(g_c)
+```
+ 
+ 
