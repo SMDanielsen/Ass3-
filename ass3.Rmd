@@ -31,5 +31,8 @@ g_c <- read.csv("Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo
 as_tibble(g_c)
 View(g_c)
 ```
- 
+```{r continents}
+
+
+```
  
