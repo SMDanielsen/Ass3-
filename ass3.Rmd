@@ -31,5 +31,18 @@ g_c <- read.csv("Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo
 as_tibble(g_c)
 View(g_c)
 ```
- 
+
+
+```{r continents}
+g_c <- g_c %>%
+  mutate(continent = case_when(
+     world_4region == "asia" & un_sdg_region %in% c("un_australia_and_new_zealand", "un_oceania_exc_australia_and_new_zealand") ~ "Oceania",
+    world_4region ==  "asia" & !(un_sdg_region %in% c("un_australia_and_new_zealand", "un_oceania_exc_australia_and_new_zealand")) ~ "Asia",
+    world_4region == "africa" ~ "Africa",
+    world_4region == "americas" ~ "Americas",
+    world_4region ==  "europe" ~ "Europe")
+  ) %>%
+ filter(!is.na(iso3166_1_alpha3))
+
+```
  
