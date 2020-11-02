@@ -27,9 +27,9 @@ Filen ddf--entities-geo--country.csv gir oss et inblikk i ulike land, inntektens
  
 ```{r g_c}
 library(readr)
-g_c <- read.csv("Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo--country.csv")
+g_c <- read_csv("Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo--country.csv")
 as_tibble(g_c)
-View(g_c)
+
 ```
 
 
@@ -43,6 +43,22 @@ g_c <- g_c %>%
     world_4region ==  "europe" ~ "Europe")
   ) %>%
  filter(!is.na(iso3166_1_alpha3))
-
 ```
  
+# Spørsmål 5
+```{r countries}
+length(unique(g_c$country))
+```
+
+Det er nå 247 land. 
+Tidligere 273 men vil valgte å filtrere ut utdaterte land. 
+
+# Spørsmål 6
+
+```{r countries_in_each_continent, message=FALSE}
+g_c %>%
+  group_by(continent) %>%
+  summarise(count = length(unique(country)))
+
+```
+Som vi kan lese av i tabellen ovenfor, er det 59 land i Afrika, 55 land i Amerika, 47 land i Asia, 58 land i Europa og 28 land i Oseania som er involverte i datasettet. 
