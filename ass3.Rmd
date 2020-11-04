@@ -62,3 +62,5 @@ g_c %>%
 
 ```
 Som vi kan lese av i tabellen ovenfor, er det 59 land i Afrika, 55 land i Amerika, 47 land i Asia, 58 land i Europa og 28 land i Oseania som er involverte i datasettet. 
+
+
