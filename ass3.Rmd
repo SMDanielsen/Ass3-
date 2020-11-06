@@ -13,7 +13,7 @@ library(readr)
 # Spørsmål 1 
 
 Filen ddf_concepts.csv inneholder all mulig informasjon og ikke datasett, men 596 beskrivelser. 
-Man kan for eksempel se at de har beskrivelser av alder av første ekteskap, arbeidsledighet, sykdom, dødsfall og alkoholkonsum.
+Man kan for eksempel se at de har beskrivelser av alder av første ekteskap, arbeidsledighet, sykdom, dødsfall og alkoholkonsum. 
 
 # Spørsmål 2
 
@@ -105,4 +105,34 @@ g_c  <-  table(g_c_min$year_min)
 
 ```
 
+
+# Spørsmål 10
+
+```{r}
+g_c_pop <- read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--population_total--by--geo--time.csv",
+col_types =cols(time =col_date(format = "%Y")))
+
+g_c <- g_c%>%
+  left_join(g_c_pop, by =c("country" = "geo", "year" = "time"))
+```
+Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observasjoner, tabellen inneholder tre ulike variabler; land, tid og populasjon. 
+```
+
+
+# Spørsmål 12 
+
+```{r gdp_data_inflation}
+gdp_pc <- read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--gdppercapita_us_inflation_adjusted--by--geo--time.csv",
+col_types =cols(time =col_date(format = "%Y")))
+```
+
+```{r  gc}
+g_c <- g_c %>%
+  left_join(gdp_pc, by=c("country"="geo", "year"="time"))
+
+```
+
+```{r gdp_data}
+names(g_c)
+```
 
