@@ -64,3 +64,45 @@ g_c %>%
 Som vi kan lese av i tabellen ovenfor, er det 59 land i Afrika, 55 land i Amerika, 47 land i Asia, 58 land i Europa og 28 land i Oseania som er involverte i datasettet. 
 
 
+# Spørsmål 7
+
+```{r, Lagt til en ny variabel }
+lifeExp <-read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--life_expectancy_years--by--geo--time.csv",col_types =cols(time =col_date(format = "%Y")))
+
+
+lifeExp <- lifeExp%>%
+  rename(year = time)
+
+length(unique(lifeExp$geo))
+```
+Det er 189 land som har informasjon om life Expectancy.
+
+
+# spørsmål 8
+
+```{r,Variabler i g_c}
+names(g_c)
+```
+
+
+```{r, valgt ut 10 variabler }
+g_c <- g_c %>%
+  select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%>%
+  left_join(lifeExp, by =c("country" = "geo"))%>%
+  filter(!(is.na(year)& is.na(life_expectancy_years)))%>%
+  filter(year<"2020-01-01")
+```
+
+
+# spørsmål 9
+
+```{r, observasjoner av LifeExp}
+g_c_min <- g_c %>%
+  group_by(country)%>%
+    summarise(year_min =min(year)
+g_c  <-  table(g_c_min$year_min)
+
+
+```
+
+
