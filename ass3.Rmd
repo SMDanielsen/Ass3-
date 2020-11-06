@@ -98,11 +98,10 @@ g_c <- g_c %>%
 
 ```{r, observasjoner av LifeExp}
 g_c_min <- g_c %>%
-  group_by(country)%>%
-    summarise(year_min =min(year)
-g_c  <-  table(g_c_min$year_min)
+  group_by(country) %>%
+  summarise(year_min = min(year))
+
+table(g_c_min$year_min)
 
 
 ```
-
-
