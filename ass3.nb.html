@@ -1826,9 +1826,9 @@ library(readr)</code></pre>
 <pre class="r"><code>library(readr)
 g_c &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo--country.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgYGlzLS1jb3VudHJ5YCA9IGNvbF9sb2dpY2FsKCksXG4gIGlzbzMxNjZfMV9udW1lcmljID0gY29sX2RvdWJsZSgpLFxuICBsYXRpdHVkZSA9IGNvbF9kb3VibGUoKSxcbiAgbG9uZ2l0dWRlID0gY29sX2RvdWJsZSgpLFxuICB1bl9zdGF0ZSA9IGNvbF9sb2dpY2FsKClcbilcbuKEuSBVc2UgYHNwZWMoKWAgZm9yIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9ucy5cbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgYGlzLS1jb3VudHJ5YCA9IGNvbF9sb2dpY2FsKCksXG4gIGlzbzMxNjZfMV9udW1lcmljID0gY29sX2RvdWJsZSgpLFxuICBsYXRpdHVkZSA9IGNvbF9kb3VibGUoKSxcbiAgbG9uZ2l0dWRlID0gY29sX2RvdWJsZSgpLFxuICB1bl9zdGF0ZSA9IGNvbF9sb2dpY2FsKClcbilcbuKEuSBVc2UgYHNwZWMoKWAgZm9yIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9ucy5cbiJ9 -->
 <pre><code>
-── Column specification ───────────────────────────────────────────────────────────────────────
+── Column specification ───────────────────────────────────────────────────────────────
 cols(
   .default = col_character(),
   `is--country` = col_logical(),
@@ -1949,11 +1949,12 @@ length(unique(lifeExp$geo))</code></pre>
 <h1>spørsmål 9</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX21pbiA8LSBnX2MgJT4lXG4gIGdyb3VwX2J5KGNvdW50cnkpJT4lXG4gICAgc3VtbWFyaXNlKHllYXJfbWluID1taW4oeWVhcilcbmdfYyAgPC0gIHRhYmxlKGdfY19taW4keWVhcl9taW4pXG5cblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX21pbiA8LSBnX2MgJT4lXG4gIGdyb3VwX2J5KGNvdW50cnkpICU+JVxuICBzdW1tYXJpc2UoeWVhcl9taW4gPSBtaW4oeWVhcikpXG5cbnRhYmxlKGdfY19taW4keWVhcl9taW4pXG5cblxuXG5gYGAifQ== -->
 <pre class="r"><code>g_c_min &lt;- g_c %&gt;%
-  group_by(country)%&gt;%
-    summarise(year_min =min(year)
-g_c  &lt;-  table(g_c_min$year_min)
+  group_by(country) %&gt;%
+  summarise(year_min = min(year))
+
+table(g_c_min$year_min)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -1978,21 +1979,33 @@ length(unique(lifeExp$geo))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observasjoner, tabellen inneholder tre ulike variabler; land, tid og populasjon.</p>
-<pre><code>
-
-# Spørsmål 12 
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2RwX3BjIDwtIHJlYWRfY3N2KFwiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tZ2RwcGVyY2FwaXRhX3VzX2luZmxhdGlvbl9hZGp1c3RlZC0tYnktLWdlby0tdGltZS5jc3ZcIixcbmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSBcIiVZXCIpKSlcbmBgYCJ9 --&gt;
-
-```r
-gdp_pc &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--gdppercapita_us_inflation_adjusted--by--geo--time.csv&quot;,
+</div>
+<div id="spørsmål-11" class="section level1">
+<h1>Spørsmål 11</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ19jKVxuYGBgIn0= -->
+<pre class="r"><code>names(g_c)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImNvdW50cnlcIiAgICAgICAgICAgICAgICBcImc3N19hbmRfb2VjZF9jb3VudHJpZXNcIiBcImluY29tZV8zZ3JvdXBzXCIgICAgICAgIFxuIFs0XSBcImluY29tZV9ncm91cHNcIiAgICAgICAgICBcImlzLS1jb3VudHJ5XCIgICAgICAgICAgICBcImlzbzMxNjZfMV9hbHBoYTJcIiAgICAgIFxuIFs3XSBcImlzbzMxNjZfMV9hbHBoYTNcIiAgICAgICBcImlzbzMxNjZfMV9udW1lcmljXCIgICAgICBcImlzbzMxNjZfMlwiICAgICAgICAgICAgIFxuWzEwXSBcImxhbmRsb2NrZWRcIiAgICAgICAgICAgICBcImxhdGl0dWRlXCIgICAgICAgICAgICAgICBcImxvbmdpdHVkZVwiICAgICAgICAgICAgIFxuWzEzXSBcIm1haW5fcmVsaWdpb25fMjAwOFwiICAgICBcIm5hbWVcIiAgICAgICAgICAgICAgICAgICBcInVuX3NkZ19sZGNcIiAgICAgICAgICAgIFxuWzE2XSBcInVuX3NkZ19yZWdpb25cIiAgICAgICAgICBcInVuX3N0YXRlXCIgICAgICAgICAgICAgICBcInVuaWNlZl9yZWdpb25cIiAgICAgICAgIFxuWzE5XSBcInVuaWNvZGVfcmVnaW9uX3N1YnRhZ1wiICBcIndvcmxkXzRyZWdpb25cIiAgICAgICAgICBcIndvcmxkXzZyZWdpb25cIiAgICAgICAgIFxuWzIyXSBcImNvbnRpbmVudFwiICAgICAgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;country&quot;                &quot;g77_and_oecd_countries&quot; &quot;income_3groups&quot;        
+ [4] &quot;income_groups&quot;          &quot;is--country&quot;            &quot;iso3166_1_alpha2&quot;      
+ [7] &quot;iso3166_1_alpha3&quot;       &quot;iso3166_1_numeric&quot;      &quot;iso3166_2&quot;             
+[10] &quot;landlocked&quot;             &quot;latitude&quot;               &quot;longitude&quot;             
+[13] &quot;main_religion_2008&quot;     &quot;name&quot;                   &quot;un_sdg_ldc&quot;            
+[16] &quot;un_sdg_region&quot;          &quot;un_state&quot;               &quot;unicef_region&quot;         
+[19] &quot;unicode_region_subtag&quot;  &quot;world_4region&quot;          &quot;world_6region&quot;         
+[22] &quot;continent&quot;             </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="spørsmål-12" class="section level1">
+<h1>Spørsmål 12</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2RwX3BjIDwtIHJlYWRfY3N2KFwiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tZ2RwcGVyY2FwaXRhX3VzX2luZmxhdGlvbl9hZGp1c3RlZC0tYnktLWdlby0tdGltZS5jc3ZcIixcbmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSBcIiVZXCIpKSlcbmBgYCJ9 -->
+<pre class="r"><code>gdp_pc &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--gdppercapita_us_inflation_adjusted--by--geo--time.csv&quot;,
 col_types =cols(time =col_date(format = &quot;%Y&quot;)))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -2011,12 +2024,34 @@ col_types =cols(time =col_date(format = &quot;%Y&quot;)))</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ19jKVxuYGBgIn0= -->
 <pre class="r"><code>names(g_c)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImNvdW50cnlcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIm5hbWVcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFszXSBcImlzbzMxNjZfMV9hbHBoYTNcIiAgICAgICAgICAgICAgICAgICBcIm1haW5fcmVsaWdpb25fMjAwOFwiICAgICAgICAgICAgICAgIFxuIFs1XSBcInVuX3NkZ19yZWdpb25cIiAgICAgICAgICAgICAgICAgICAgICBcIndvcmxkXzRyZWdpb25cIiAgICAgICAgICAgICAgICAgICAgIFxuIFs3XSBcImNvbnRpbmVudFwiICAgICAgICAgICAgICAgICAgICAgICAgICBcIndvcmxkXzZyZWdpb25cIiAgICAgICAgICAgICAgICAgICAgIFxuIFs5XSBcInllYXJcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcImxpZmVfZXhwZWN0YW5jeV95ZWFyc1wiICAgICAgICAgICAgIFxuWzExXSBcInBvcHVsYXRpb25fdG90YWxcIiAgICAgICAgICAgICAgICAgICBcImdkcHBlcmNhcGl0YV91c19pbmZsYXRpb25fYWRqdXN0ZWRcIlxuIn0= -->
+<pre><code> [1] &quot;country&quot;                            &quot;name&quot;                              
+ [3] &quot;iso3166_1_alpha3&quot;                   &quot;main_religion_2008&quot;                
+ [5] &quot;un_sdg_region&quot;                      &quot;world_4region&quot;                     
+ [7] &quot;continent&quot;                          &quot;world_6region&quot;                     
+ [9] &quot;year&quot;                               &quot;life_expectancy_years&quot;             
+[11] &quot;population_total&quot;                   &quot;gdppercapita_us_inflation_adjusted&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="spørsmål-13" class="section level1">
+<h1>Spørsmål 13</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jIDwtIGdfYyAlPiVcbiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGlzbzMxNjZfMV9hbHBoYTMsIG1haW5fcmVsaWdpb25fMjAwOCx1bl9zZGdfcmVnaW9uLCB3b3JsZF80cmVnaW9uLCBjb250aW5lbnQsIHdvcmxkXzZyZWdpb24sKSU+JVxuICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoXCJjb3VudHJ5XCIgPSBcImdlb1wiKSklPiVcbiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKGxpZmVfZXhwZWN0YW5jeV95ZWFycykpKSU+JVxuICBmaWx0ZXIoeWVhcjxcIjIwMjAtMDEtMDFcIilcbmBgYCJ9 -->
+<pre class="r"><code>g_c &lt;- g_c %&gt;%
+  select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%&gt;%
+  left_join(lifeExp, by =c(&quot;country&quot; = &quot;geo&quot;))%&gt;%
+  filter(!(is.na(year)&amp; is.na(life_expectancy_years)))%&gt;%
+  filter(year&lt;&quot;2020-01-01&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyIHNldHVwLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeSh0aWJibGUpCmxpYnJhcnkocmVhZHIpCmBgYAoKIyBTcMO4cnNtw6VsIDEgCgpGaWxlbiBkZGZfY29uY2VwdHMuY3N2IGlubmVob2xkZXIgYWxsIG11bGlnIGluZm9ybWFzam9uIG9nIGlra2UgZGF0YXNldHQsIG1lbiA1OTYgYmVza3JpdmVsc2VyLiAKTWFuIGthbiBmb3IgZWtzZW1wZWwgc2UgYXQgZGUgaGFyIGJlc2tyaXZlbHNlciBhdiBhbGRlciBhdiBmw7hyc3RlIGVrdGVza2FwLCBhcmJlaWRzbGVkaWdoZXQsIHN5a2RvbSwgZMO4ZHNmYWxsIG9nIGFsa29ob2xrb25zdW0uIAoKIyBTcMO4cnNtw6VsIDIKCkZpbGVuIGRkZi0tZW50aXRpZXMtZ2VvLS1jb3VudHJ5LmNzdiBnaXIgb3NzIGV0IGluYmxpa2sgaSB1bGlrZSBsYW5kLCBpbm50ZWt0ZW5zZ3J1cHBlcmluZ2VyLCBodmlsa2VuIHJlbGlnaW9uIGRlIHRpbGjDuHJlciwgYW5uZW4gZ2VvZ3JhZmlzayBpbmZvcm1hanNvbiBzb20gZm9yIGVrc2VtcGVsIHN0w7hycmVsc2UgcMOlIGxhbmRldCBvZyBsb2thc2pvbiwgYnJlZGRlZ3JhZGVyIG9zdi4gCgojIFNww7hyc23DpWwgMyAKCiBGaWxlbiBkZmYtZ2FwbWluZGVyIGlubmVob2xkZXIgZW4gdGFiZWxsIG92ZXIgcmVnaW9uZW5lIHNvbSBlciBtZWQgaSBGTi4KIAojIFNww7hyc23DpWwgNCAKIApgYGB7ciBnX2N9CmxpYnJhcnkocmVhZHIpCmdfYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvZGRmLS1lbnRpdGllcy0tZ2VvLS1jb3VudHJ5LmNzdiIpCmFzX3RpYmJsZShnX2MpCgpgYGAKCgpgYGB7ciBjb250aW5lbnRzfQpnX2MgPC0gZ19jICU+JQogIG11dGF0ZShjb250aW5lbnQgPSBjYXNlX3doZW4oCiAgICAgd29ybGRfNHJlZ2lvbiA9PSAiYXNpYSIgJiB1bl9zZGdfcmVnaW9uICVpbiUgYygidW5fYXVzdHJhbGlhX2FuZF9uZXdfemVhbGFuZCIsICJ1bl9vY2VhbmlhX2V4Y19hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIikgfiAiT2NlYW5pYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICAiYXNpYSIgJiAhKHVuX3NkZ19yZWdpb24gJWluJSBjKCJ1bl9hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIiwgInVuX29jZWFuaWFfZXhjX2F1c3RyYWxpYV9hbmRfbmV3X3plYWxhbmQiKSkgfiAiQXNpYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhZnJpY2EiIH4gIkFmcmljYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhbWVyaWNhcyIgfiAiQW1lcmljYXMiLAogICAgd29ybGRfNHJlZ2lvbiA9PSAgImV1cm9wZSIgfiAiRXVyb3BlIikKICApICU+JQogZmlsdGVyKCFpcy5uYShpc28zMTY2XzFfYWxwaGEzKSkKYGBgCiAKIyBTcMO4cnNtw6VsIDUKYGBge3IgY291bnRyaWVzfQpsZW5ndGgodW5pcXVlKGdfYyRjb3VudHJ5KSkKYGBgCgpEZXQgZXIgbsOlIDI0NyBsYW5kLiAKVGlkbGlnZXJlIDI3MyBtZW4gdmlsIHZhbGd0ZSDDpSBmaWx0cmVyZSB1dCB1dGRhdGVydGUgbGFuZC4gCgojIFNww7hyc23DpWwgNgoKYGBge3IgY291bnRyaWVzX2luX2VhY2hfY29udGluZW50LCBtZXNzYWdlPUZBTFNFfQpnX2MgJT4lCiAgZ3JvdXBfYnkoY29udGluZW50KSAlPiUKICBzdW1tYXJpc2UoY291bnQgPSBsZW5ndGgodW5pcXVlKGNvdW50cnkpKSkKCmBgYApTb20gdmkga2FuIGxlc2UgYXYgaSB0YWJlbGxlbiBvdmVuZm9yLCBlciBkZXQgNTkgbGFuZCBpIEFmcmlrYSwgNTUgbGFuZCBpIEFtZXJpa2EsIDQ3IGxhbmQgaSBBc2lhLCA1OCBsYW5kIGkgRXVyb3BhIG9nIDI4IGxhbmQgaSBPc2VhbmlhIHNvbSBlciBpbnZvbHZlcnRlIGkgZGF0YXNldHRldC4gCgoKIyBTcMO4cnNtw6VsIDcKCmBgYHtyLCBMYWd0IHRpbCBlbiBueSB2YXJpYWJlbCB9CmxpZmVFeHAgPC1yZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tbGlmZV9leHBlY3RhbmN5X3llYXJzLS1ieS0tZ2VvLS10aW1lLmNzdiIsY29sX3R5cGVzID1jb2xzKHRpbWUgPWNvbF9kYXRlKGZvcm1hdCA9ICIlWSIpKSkKCgpsaWZlRXhwIDwtIGxpZmVFeHAlPiUKICByZW5hbWUoeWVhciA9IHRpbWUpCgpsZW5ndGgodW5pcXVlKGxpZmVFeHAkZ2VvKSkKYGBgCkRldCBlciAxODkgbGFuZCBzb20gaGFyIGluZm9ybWFzam9uIG9tIGxpZmUgRXhwZWN0YW5jeS4KCgojIHNww7hyc23DpWwgOAoKYGBge3IsVmFyaWFibGVyIGkgZ19jfQpuYW1lcyhnX2MpCmBgYAoKCmBgYHtyLCB2YWxndCB1dCAxMCB2YXJpYWJsZXIgfQpnX2MgPC0gZ19jICU+JQogIHNlbGVjdChjb3VudHJ5LCBuYW1lLCBpc28zMTY2XzFfYWxwaGEzLCBtYWluX3JlbGlnaW9uXzIwMDgsdW5fc2RnX3JlZ2lvbiwgd29ybGRfNHJlZ2lvbiwgY29udGluZW50LCB3b3JsZF82cmVnaW9uLCklPiUKICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoImNvdW50cnkiID0gImdlbyIpKSU+JQogIGZpbHRlcighKGlzLm5hKHllYXIpJiBpcy5uYShsaWZlX2V4cGVjdGFuY3lfeWVhcnMpKSklPiUKICBmaWx0ZXIoeWVhcjwiMjAyMC0wMS0wMSIpCmBgYAoKCiMgc3DDuHJzbcOlbCA5CgpgYGB7ciwgb2JzZXJ2YXNqb25lciBhdiBMaWZlRXhwfQpnX2NfbWluIDwtIGdfYyAlPiUKICBncm91cF9ieShjb3VudHJ5KSU+JQogICAgc3VtbWFyaXNlKHllYXJfbWluID1taW4oeWVhcikKZ19jICA8LSAgdGFibGUoZ19jX21pbiR5ZWFyX21pbikKCgpgYGAKCgojIFNww7hyc23DpWwgMTAKCmBgYHtyfQpnX2NfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS1wb3B1bGF0aW9uX3RvdGFsLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCgpnX2MgPC0gZ19jJT4lCiAgbGVmdF9qb2luKGdfY19wb3AsIGJ5ID1jKCJjb3VudHJ5IiA9ICJnZW8iLCAieWVhciIgPSAidGltZSIpKQpgYGAKRGVubmUgdmlzZXIgb3NzIGh2b3JkYW4gcG9wdWxhc2pvbmVuIMO4a2VyIG92ZXIgdGlkLCB2ZWQgw6Ugc2UgcMOlIDU5IDI5NyBvYnNlcnZhc2pvbmVyLCB0YWJlbGxlbiBpbm5laG9sZGVyIHRyZSB1bGlrZSB2YXJpYWJsZXI7IGxhbmQsIHRpZCBvZyBwb3B1bGFzam9uLiAKYGBgCgoKIyBTcMO4cnNtw6VsIDEyIAoKYGBge3IgZ2RwX2RhdGFfaW5mbGF0aW9ufQpnZHBfcGMgPC0gcmVhZF9jc3YoIkRhdGEvZGRmLS1nYXBtaW5kZXItLXN5c3RlbWFfZ2xvYmFsaXMtbWFzdGVyL2NvdW50cmllcy1ldGMtZGF0YXBvaW50cy9kZGYtLWRhdGFwb2ludHMtLWdkcHBlcmNhcGl0YV91c19pbmZsYXRpb25fYWRqdXN0ZWQtLWJ5LS1nZW8tLXRpbWUuY3N2IiwKY29sX3R5cGVzID1jb2xzKHRpbWUgPWNvbF9kYXRlKGZvcm1hdCA9ICIlWSIpKSkKYGBgCgpgYGB7ciAgZ2N9CmdfYyA8LSBnX2MgJT4lCiAgbGVmdF9qb2luKGdkcF9wYywgYnk9YygiY291bnRyeSI9ImdlbyIsICJ5ZWFyIj0idGltZSIpKQoKYGBgCgpgYGB7ciBnZHBfZGF0YX0KbmFtZXMoZ19jKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyIHNldHVwLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeSh0aWJibGUpCmxpYnJhcnkocmVhZHIpCmBgYAoKIyBTcMO4cnNtw6VsIDEgCgpGaWxlbiBkZGZfY29uY2VwdHMuY3N2IGlubmVob2xkZXIgYWxsIG11bGlnIGluZm9ybWFzam9uIG9nIGlra2UgZGF0YXNldHQsIG1lbiA1OTYgYmVza3JpdmVsc2VyLiAKTWFuIGthbiBmb3IgZWtzZW1wZWwgc2UgYXQgZGUgaGFyIGJlc2tyaXZlbHNlciBhdiBhbGRlciBhdiBmw7hyc3RlIGVrdGVza2FwLCBhcmJlaWRzbGVkaWdoZXQsIHN5a2RvbSwgZMO4ZHNmYWxsIG9nIGFsa29ob2xrb25zdW0uIAoKIyBTcMO4cnNtw6VsIDIKCkZpbGVuIGRkZi0tZW50aXRpZXMtZ2VvLS1jb3VudHJ5LmNzdiBnaXIgb3NzIGV0IGluYmxpa2sgaSB1bGlrZSBsYW5kLCBpbm50ZWt0ZW5zZ3J1cHBlcmluZ2VyLCBodmlsa2VuIHJlbGlnaW9uIGRlIHRpbGjDuHJlciwgYW5uZW4gZ2VvZ3JhZmlzayBpbmZvcm1hanNvbiBzb20gZm9yIGVrc2VtcGVsIHN0w7hycmVsc2UgcMOlIGxhbmRldCBvZyBsb2thc2pvbiwgYnJlZGRlZ3JhZGVyIG9zdi4gCgojIFNww7hyc23DpWwgMyAKCiBGaWxlbiBkZmYtZ2FwbWluZGVyIGlubmVob2xkZXIgZW4gdGFiZWxsIG92ZXIgcmVnaW9uZW5lIHNvbSBlciBtZWQgaSBGTi4KIAojIFNww7hyc23DpWwgNCAKIApgYGB7ciBnX2N9CmxpYnJhcnkocmVhZHIpCmdfYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvZGRmLS1lbnRpdGllcy0tZ2VvLS1jb3VudHJ5LmNzdiIpCmFzX3RpYmJsZShnX2MpCgpgYGAKCgpgYGB7ciBjb250aW5lbnRzfQpnX2MgPC0gZ19jICU+JQogIG11dGF0ZShjb250aW5lbnQgPSBjYXNlX3doZW4oCiAgICAgd29ybGRfNHJlZ2lvbiA9PSAiYXNpYSIgJiB1bl9zZGdfcmVnaW9uICVpbiUgYygidW5fYXVzdHJhbGlhX2FuZF9uZXdfemVhbGFuZCIsICJ1bl9vY2VhbmlhX2V4Y19hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIikgfiAiT2NlYW5pYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICAiYXNpYSIgJiAhKHVuX3NkZ19yZWdpb24gJWluJSBjKCJ1bl9hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIiwgInVuX29jZWFuaWFfZXhjX2F1c3RyYWxpYV9hbmRfbmV3X3plYWxhbmQiKSkgfiAiQXNpYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhZnJpY2EiIH4gIkFmcmljYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhbWVyaWNhcyIgfiAiQW1lcmljYXMiLAogICAgd29ybGRfNHJlZ2lvbiA9PSAgImV1cm9wZSIgfiAiRXVyb3BlIikKICApICU+JQogZmlsdGVyKCFpcy5uYShpc28zMTY2XzFfYWxwaGEzKSkKYGBgCiAKIyBTcMO4cnNtw6VsIDUKYGBge3IgY291bnRyaWVzfQpsZW5ndGgodW5pcXVlKGdfYyRjb3VudHJ5KSkKYGBgCgpEZXQgZXIgbsOlIDI0NyBsYW5kLiAKVGlkbGlnZXJlIDI3MyBtZW4gdmlsIHZhbGd0ZSDDpSBmaWx0cmVyZSB1dCB1dGRhdGVydGUgbGFuZC4gCgojIFNww7hyc23DpWwgNgoKYGBge3IgY291bnRyaWVzX2luX2VhY2hfY29udGluZW50LCBtZXNzYWdlPUZBTFNFfQpnX2MgJT4lCiAgZ3JvdXBfYnkoY29udGluZW50KSAlPiUKICBzdW1tYXJpc2UoY291bnQgPSBsZW5ndGgodW5pcXVlKGNvdW50cnkpKSkKCmBgYApTb20gdmkga2FuIGxlc2UgYXYgaSB0YWJlbGxlbiBvdmVuZm9yLCBlciBkZXQgNTkgbGFuZCBpIEFmcmlrYSwgNTUgbGFuZCBpIEFtZXJpa2EsIDQ3IGxhbmQgaSBBc2lhLCA1OCBsYW5kIGkgRXVyb3BhIG9nIDI4IGxhbmQgaSBPc2VhbmlhIHNvbSBlciBpbnZvbHZlcnRlIGkgZGF0YXNldHRldC4gCgoKIyBTcMO4cnNtw6VsIDcKCmBgYHtyLCBMYWd0IHRpbCBlbiBueSB2YXJpYWJlbCB9CmxpZmVFeHAgPC1yZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tbGlmZV9leHBlY3RhbmN5X3llYXJzLS1ieS0tZ2VvLS10aW1lLmNzdiIsY29sX3R5cGVzID1jb2xzKHRpbWUgPWNvbF9kYXRlKGZvcm1hdCA9ICIlWSIpKSkKCgpsaWZlRXhwIDwtIGxpZmVFeHAlPiUKICByZW5hbWUoeWVhciA9IHRpbWUpCgpsZW5ndGgodW5pcXVlKGxpZmVFeHAkZ2VvKSkKYGBgCkRldCBlciAxODkgbGFuZCBzb20gaGFyIGluZm9ybWFzam9uIG9tIGxpZmUgRXhwZWN0YW5jeS4KCgojIHNww7hyc23DpWwgOAoKYGBge3IsVmFyaWFibGVyIGkgZ19jfQpuYW1lcyhnX2MpCmBgYAoKCmBgYHtyLCB2YWxndCB1dCAxMCB2YXJpYWJsZXIgfQpnX2MgPC0gZ19jICU+JQogIHNlbGVjdChjb3VudHJ5LCBuYW1lLCBpc28zMTY2XzFfYWxwaGEzLCBtYWluX3JlbGlnaW9uXzIwMDgsdW5fc2RnX3JlZ2lvbiwgd29ybGRfNHJlZ2lvbiwgY29udGluZW50LCB3b3JsZF82cmVnaW9uLCklPiUKICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoImNvdW50cnkiID0gImdlbyIpKSU+JQogIGZpbHRlcighKGlzLm5hKHllYXIpJiBpcy5uYShsaWZlX2V4cGVjdGFuY3lfeWVhcnMpKSklPiUKICBmaWx0ZXIoeWVhcjwiMjAyMC0wMS0wMSIpCmBgYAoKCiMgc3DDuHJzbcOlbCA5CgpgYGB7ciwgb2JzZXJ2YXNqb25lciBhdiBMaWZlRXhwLCBtZXNzYWdlPUZBTFNFfQpnX2NfbWluIDwtIGdfYyAlPiUKICBncm91cF9ieShjb3VudHJ5KSAlPiUKICBzdW1tYXJpc2UoeWVhcl9taW4gPSBtaW4oeWVhcikpCgp0YWJsZShnX2NfbWluJHllYXJfbWluKQoKCgpgYGAKCgojIFNww7hyc23DpWwgMTAKCmBgYHtyfQpnX2NfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS1wb3B1bGF0aW9uX3RvdGFsLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCgpnX2MgPC0gZ19jJT4lCiAgbGVmdF9qb2luKGdfY19wb3AsIGJ5ID1jKCJjb3VudHJ5IiA9ICJnZW8iLCAieWVhciIgPSAidGltZSIpKQpgYGAKRGVubmUgdmlzZXIgb3NzIGh2b3JkYW4gcG9wdWxhc2pvbmVuIMO4a2VyIG92ZXIgdGlkLCB2ZWQgw6Ugc2UgcMOlIDU5IDI5NyBvYnNlcnZhc2pvbmVyLCB0YWJlbGxlbiBpbm5laG9sZGVyIHRyZSB1bGlrZSB2YXJpYWJsZXI7IGxhbmQsIHRpZCBvZyBwb3B1bGFzam9uLiAKCiMgU3DDuHJzbcOlbCAxMQoKYGBge3J9CnVfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS11cmJhbl9wb3B1bGF0aW9uLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCmBgYAoKCgojIFNww7hyc23DpWwgMTIgCgpgYGB7ciBnZHBfZGF0YV9pbmZsYXRpb259CmdkcF9wYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tZ2RwcGVyY2FwaXRhX3VzX2luZmxhdGlvbl9hZGp1c3RlZC0tYnktLWdlby0tdGltZS5jc3YiLApjb2xfdHlwZXMgPWNvbHModGltZSA9Y29sX2RhdGUoZm9ybWF0ID0gIiVZIikpKQpgYGAKCmBgYHtyICBnY30KZ19jIDwtIGdfYyAlPiUKICBsZWZ0X2pvaW4oZ2RwX3BjLCBieT1jKCJjb3VudHJ5Ij0iZ2VvIiwgInllYXIiPSJ0aW1lIikpCgpgYGAKCmBgYHtyIGdkcF9kYXRhfQpuYW1lcyhnX2MpCmBgYAoKIyBTcMO4cnNtw6VsIDEzCmBgYHtyfQpnX2MgPC0gZ19jJT4lCiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGxpZmVFeHAsIGdkcF9wYywgeWVhciAsIGNvbnRpbmVudCwgKSU+JQogIGxlZnRfam9pbihsaWZlRXhwLCBieSA9YygiY291bnRyeSIgPSAiZ2VvIikpJT4lCiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKCkpKSU+JQogIGZpbHRlcih5ZWFyPCIyMDIwLTAxLTAxIikKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKZGltKG15X2dhcG1pbmRlcikKYGBgCgo=</div>
 
 
 

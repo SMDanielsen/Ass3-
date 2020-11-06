@@ -96,7 +96,7 @@ g_c <- g_c %>%
 
 # spørsmål 9
 
-```{r, observasjoner av LifeExp}
+```{r, observasjoner av LifeExp, message=FALSE}
 g_c_min <- g_c %>%
   group_by(country) %>%
   summarise(year_min = min(year))
@@ -104,7 +104,8 @@ g_c_min <- g_c %>%
 table(g_c_min$year_min)
 
 
-````
+
+```
 
 
 # Spørsmål 10
@@ -117,7 +118,14 @@ g_c <- g_c%>%
   left_join(g_c_pop, by =c("country" = "geo", "year" = "time"))
 ```
 Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observasjoner, tabellen inneholder tre ulike variabler; land, tid og populasjon. 
+
+# Spørsmål 11
+
+```{r}
+u_pop <- read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--urban_population--by--geo--time.csv",
+col_types =cols(time =col_date(format = "%Y")))
 ```
+
 
 
 # Spørsmål 12 
@@ -137,5 +145,14 @@ g_c <- g_c %>%
 names(g_c)
 ```
 
-
+# Spørsmål 13
+```{r}
+g_c <- g_c%>%
+  select(country, name, lifeExp, gdp_pc, year , continent, )%>%
+  left_join(lifeExp, by =c("country" = "geo"))%>%
+  filter(!(is.na(year)& is.na()))%>%
+  filter(year<"2020-01-01")
+                                                                                                                                                                                      
+dim(my_gapminder)
+```
 
