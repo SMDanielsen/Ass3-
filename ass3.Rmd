@@ -110,7 +110,7 @@ table(g_c_min$year_min)
 
 # Spørsmål 10
 
-```{r}
+```{r population}
 g_c_pop <- read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--population_total--by--geo--time.csv",
 col_types =cols(time =col_date(format = "%Y")))
 
@@ -121,11 +121,10 @@ Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observ
 
 # Spørsmål 11
 
-```{r}
+```{r urban population}
 u_pop <- read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--urban_population--by--geo--time.csv",
 col_types =cols(time =col_date(format = "%Y")))
 ```
-
 
 
 # Spørsmål 12 
@@ -145,6 +144,9 @@ g_c <- g_c %>%
 names(g_c)
 ```
 
+I oppgave 10, 11 og 12
+
+
 # Spørsmål 13
 ```{r rename}
 g_c <- g_c %>%
@@ -158,10 +160,11 @@ g_c <- g_c %>%
 t1 <- paste(seq(1962, 2017, by = 5), "01-01", sep = "-") %>% parse_date(format = "%Y-%m-%d")
 my_gapminder <- g_c %>%
   filter(year %in% t1) %>%
-  select(name, continent, year, lifeExp, g_c_pop, gdp_pc) %>%
+  select(name, continent, year, lifeExp, pop, gdpPercap) %>%
   rename("country" = "name")
 dim(my_gapminder)
 ```
+Etter å ha filtrer årene, kan vi se at vi får 2262 observasjoner fordelt på seks variabler. 
 
 
 ```
