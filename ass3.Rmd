@@ -146,13 +146,23 @@ names(g_c)
 ```
 
 # Spørsmål 13
-```{r}
-g_c <- g_c%>%
-  select(country, name, lifeExp, gdp_pc, year , continent, )%>%
-  left_join(lifeExp, by =c("country" = "geo"))%>%
-  filter(!(is.na(year)& is.na()))%>%
-  filter(year<"2020-01-01")
-                                                                                                                                                                                      
+```{r rename}
+g_c <- g_c %>%
+  rename("lifeExp" = "life_expectancy_years") %>%
+  rename("pop" = "population_total") %>%
+  rename("gdpPercap" = "gdppercapita_us_inflation_adjusted")
+```
+
+
+```{r my_gapminder}
+t1 <- paste(seq(1962, 2017, by = 5), "01-01", sep = "-") %>% parse_date(format = "%Y-%m-%d")
+my_gapminder <- g_c %>%
+  filter(year %in% t1) %>%
+  select(name, continent, year, lifeExp, g_c_pop, gdp_pc) %>%
+  rename("country" = "name")
 dim(my_gapminder)
+```
+
+
 ```
 
