@@ -45,6 +45,7 @@ g_c <- g_c %>%
  filter(!is.na(iso3166_1_alpha3))
 ```
  
+ 
 # Spørsmål 5
 ```{r countries}
 length(unique(g_c$country))
@@ -93,6 +94,7 @@ g_c <- g_c %>%
   filter(year<"2020-01-01")
 ```
 
+Her har vi valgt ut ti varaibler fra datasettet. 
 
 # spørsmål 9
 
@@ -101,12 +103,35 @@ g_c_min <- g_c %>%
   group_by(country) %>%
   summarise(year_min = min(year))
 
+g_c_min %>% 
+  count(min_year = g_c_min$year_min)
+```
+
+```{r min_year}
 table(g_c_min$year_min)
 
+```
+Vi kan se at det er tre land som startet obsevasjonene i 1970, og 186 land som startet observasjonene i 1800. 
+```{r g_c_min}
+g_c_min %>%
+  filter(year_min =="1970-01-01")
+```
+Her har vi funnet de tre landene som startet observasjonene i 1970. 
+
+
+
+```{r countries}
+
+g_c_min <- g_c_min %>% 
+  left_join(g_c,
+            by = "country") %>% 
+  filter(year_min == "1970-01-01")
+
+tibble(country=unique(g_c_min$name))
 
 
 ```
-
+I oppgave 9 de tre navnene (Andorra, Dominica, Marshall Island) som har de korteste seriene av life expectancy. 
 
 # Spørsmål 10
 
@@ -144,7 +169,8 @@ g_c <- g_c %>%
 names(g_c)
 ```
 
-I oppgave 10, 11 og 12
+I oppgave 10, 11 og 12 har vi lagt til populasjon, inflasjon urban populasjon  i gdp datasettet.
+
 
 
 # Spørsmål 13
@@ -166,6 +192,14 @@ dim(my_gapminder)
 ```
 Etter å ha filtrer årene, kan vi se at vi får 2262 observasjoner fordelt på seks variabler. 
 
+# Spørsmål 14
+
+
+# Spørsmål 15
+
+# Spørsmål 16
+
+# Spørsmål 17
 
 ```
 
