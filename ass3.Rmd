@@ -289,6 +289,20 @@ my_gapminder_2017 %>%
 
 
 # Spørsmål 17
+Leser vi først av grafen fra spørsmål 15 kan vi se bnp på x-aksen og levealder på y-aksen. 
+Størrelsen på punktene viser til hvor mange innbyggere det er i landene i de forskjellige kontinentene. 
+Vi kan først i 1962 se at Europa som har en høy BNP, også har en høy levealder. 
+I motsetning til Europa, har landene i Afrika og Asia som har en relativt lav bnp, også en lav levealder. 
+Det kan derfor være en sammenheng mellom BNP og  levealder. 
+
+Leser vi av grafen fra 1987 kan man med en gang legge merke til at det har vært en endring i Asia. 
+Det vil si at Asia begynner å få en høyere levealder enn de hadde i 1962.
+Man kan også se i 2017 at Afrika også begynner å ta seg opp i levealder. 
+
+Ser man på logaritmen til de forskjellige årstallene, kan man se at alle kontinentene har fått en positivt utvikling av bnp. 
+Asia skiller seg mest ut, som har hatt en svært positiv utivkling av bnp. 
+Man kan se at vi fått samlet inn mer data av Bnp og levealder fra flere land.
+Alt i alt kan man se at levealderen i perioden fra 1962 til 2017, har steget hos alle kontinentene.
 
 ```
 
