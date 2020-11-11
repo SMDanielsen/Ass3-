@@ -219,8 +219,35 @@ kable()
 Her kan vi se at det er 30 land i Afrika, 25 land i Amerika, Asia 17, Europa 15 og 3 land i oseania. 
 
 ```{r}
+c_min_y <- my_gapminder %>%
+filter(!is.na(gdpPercap)) %>% 
+group_by(country) %>% 
+summarise(min_year = min(year)) 
 
 ```
+
+```{r}
+c_min_y_62 <- c_min_y$country[c_min_y$min_year == "1962-01-01"] 
+```
+
+```{r}
+my_gapminder_1962 <- my_gapminder %>% 
+filter(country %in% c_min_y_62) 
+dim(my_gapminder_1962)
+
+```
+
+```{r}
+sum(is.na(my_gapminder_1962$gdpPercap))
+```
+
+```{r Venezuela}
+my_gapminder_1962 %>% 
+  group_by(country) %>% 
+  filter(is.na(gdpPercap)) %>% 
+  tibble()
+```
+
 
 # Spørsmål 15
 
