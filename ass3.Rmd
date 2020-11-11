@@ -8,6 +8,7 @@ output: html_notebook
 library(tidyverse)
 library(tibble)
 library(readr)
+library(knitr)
 ```
 
 # Spørsmål 1 
@@ -47,7 +48,7 @@ g_c <- g_c %>%
  
  
 # Spørsmål 5
-```{r countries}
+```{r land}
 length(unique(g_c$country))
 ```
 
@@ -67,7 +68,7 @@ Som vi kan lese av i tabellen ovenfor, er det 59 land i Afrika, 55 land i Amerik
 
 # Spørsmål 7
 
-```{r, Lagt til en ny variabel }
+```{r Lagt til en ny variabel }
 lifeExp <-read_csv("Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--life_expectancy_years--by--geo--time.csv",col_types =cols(time =col_date(format = "%Y")))
 
 
@@ -81,12 +82,12 @@ Det er 189 land som har informasjon om life Expectancy.
 
 # spørsmål 8
 
-```{r,Variabler i g_c}
+```{r Variabler i g_c}
 names(g_c)
 ```
 
 
-```{r, valgt ut 10 variabler }
+```{r valgt ut 10 variabler }
 g_c <- g_c %>%
   select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%>%
   left_join(lifeExp, by =c("country" = "geo"))%>%
@@ -98,7 +99,7 @@ Her har vi valgt ut ti varaibler fra datasettet.
 
 # spørsmål 9
 
-```{r, observasjoner av LifeExp, message=FALSE}
+```{r observasjoner av LifeExp, message=FALSE}
 g_c_min <- g_c %>%
   group_by(country) %>%
   summarise(year_min = min(year))
@@ -188,11 +189,33 @@ my_gapminder <- g_c %>%
   filter(year %in% t1) %>%
   select(name, continent, year, lifeExp, pop, gdpPercap) %>%
   rename("country" = "name")
+
+```
+```{r}
 dim(my_gapminder)
 ```
+
 Etter å ha filtrer årene, kan vi se at vi får 2262 observasjoner fordelt på seks variabler. 
 
 # Spørsmål 14
+```{r land_1962}
+my_gapminder_1962 <- my_gapminder %>%
+  group_by(country) %>% 
+  filter(!is.na(gdpPercap)) %>%
+  filter(year == "1962-01-01")
+length(unique(my_gapminder_1962$country))
+```
+Her kan vi se at det er 90 land som startet i 1962 har data fra gdpPercap.
+
+```{r kontinet}
+my_gapminder_1962 %>%
+distinct(country, continent) %>%
+group_by(continent) %>%
+count() %>%
+kable()
+
+```
+Her kan vi se at det er 30 land i Afrika, 25 land i Amerika, Asia 17, Europa 15 og 3 land i oseania. 
 
 
 # Spørsmål 15

@@ -1799,10 +1799,11 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHRpYmJsZSlcbmxpYnJhcnkocmVhZHIpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHRpYmJsZSlcbmxpYnJhcnkocmVhZHIpXG5saWJyYXJ5KGtuaXRyKVxuYGBgIn0= -->
 <pre class="r"><code>library(tidyverse)
 library(tibble)
-library(readr)</code></pre>
+library(readr)
+library(knitr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1826,9 +1827,9 @@ library(readr)</code></pre>
 <pre class="r"><code>library(readr)
 g_c &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/ddf--entities--geo--country.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgYGlzLS1jb3VudHJ5YCA9IGNvbF9sb2dpY2FsKCksXG4gIGlzbzMxNjZfMV9udW1lcmljID0gY29sX2RvdWJsZSgpLFxuICBsYXRpdHVkZSA9IGNvbF9kb3VibGUoKSxcbiAgbG9uZ2l0dWRlID0gY29sX2RvdWJsZSgpLFxuICB1bl9zdGF0ZSA9IGNvbF9sb2dpY2FsKClcbilcbuKEuSBVc2UgYHNwZWMoKWAgZm9yIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9ucy5cbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG7ilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgYGlzLS1jb3VudHJ5YCA9IGNvbF9sb2dpY2FsKCksXG4gIGlzbzMxNjZfMV9udW1lcmljID0gY29sX2RvdWJsZSgpLFxuICBsYXRpdHVkZSA9IGNvbF9kb3VibGUoKSxcbiAgbG9uZ2l0dWRlID0gY29sX2RvdWJsZSgpLFxuICB1bl9zdGF0ZSA9IGNvbF9sb2dpY2FsKClcbilcbuKEuSBVc2UgYHNwZWMoKWAgZm9yIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9ucy5cbiJ9 -->
 <pre><code>
-── Column specification ───────────────────────────────────────────────────────────────
+── Column specification ──────────────────────────────────────────────────────────
 cols(
   .default = col_character(),
   `is--country` = col_logical(),
@@ -1920,68 +1921,15 @@ lifeExp &lt;- lifeExp%&gt;%
 
 length(unique(lifeExp$geo))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE4OVxuIn0= -->
+<pre><code>[1] 189</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Det er 189 land som har informasjon om life Expectancy.</p>
 </div>
 <div id="spørsmål-8" class="section level1">
 <h1>spørsmål 8</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ19jKVxuYGBgIn0= -->
-<pre class="r"><code>names(g_c)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jIDwtIGdfYyAlPiVcbiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGlzbzMxNjZfMV9hbHBoYTMsIG1haW5fcmVsaWdpb25fMjAwOCx1bl9zZGdfcmVnaW9uLCB3b3JsZF80cmVnaW9uLCBjb250aW5lbnQsIHdvcmxkXzZyZWdpb24sKSU+JVxuICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoXCJjb3VudHJ5XCIgPSBcImdlb1wiKSklPiVcbiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKGxpZmVfZXhwZWN0YW5jeV95ZWFycykpKSU+JVxuICBmaWx0ZXIoeWVhcjxcIjIwMjAtMDEtMDFcIilcbmBgYCJ9 -->
-<pre class="r"><code>g_c &lt;- g_c %&gt;%
-  select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%&gt;%
-  left_join(lifeExp, by =c(&quot;country&quot; = &quot;geo&quot;))%&gt;%
-  filter(!(is.na(year)&amp; is.na(life_expectancy_years)))%&gt;%
-  filter(year&lt;&quot;2020-01-01&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="spørsmål-9" class="section level1">
-<h1>spørsmål 9</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX21pbiA8LSBnX2MgJT4lXG4gIGdyb3VwX2J5KGNvdW50cnkpICU+JVxuICBzdW1tYXJpc2UoeWVhcl9taW4gPSBtaW4oeWVhcikpXG5cbnRhYmxlKGdfY19taW4keWVhcl9taW4pXG5cblxuXG5gYGAifQ== -->
-<pre class="r"><code>g_c_min &lt;- g_c %&gt;%
-  group_by(country) %&gt;%
-  summarise(year_min = min(year))
-
-table(g_c_min$year_min)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="spørsmål-10" class="section level1">
-<h1>Spørsmål 10</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlmZUV4cCA8LXJlYWRfY3N2KFwiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tbGlmZV9leHBlY3RhbmN5X3llYXJzLS1ieS0tZ2VvLS10aW1lLmNzdlwiLGNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSBcIiVZXCIpKSlcblxuXG5saWZlRXhwIDwtIGxpZmVFeHAlPiVcbiAgcmVuYW1lKHllYXIgPSB0aW1lKVxuXG5sZW5ndGgodW5pcXVlKGxpZmVFeHAkZ2VvKSlcbmBgYCJ9 -->
-<pre class="r"><code>lifeExp &lt;-read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--life_expectancy_years--by--geo--time.csv&quot;,col_types =cols(time =col_date(format = &quot;%Y&quot;)))
-
-
-lifeExp &lt;- lifeExp%&gt;%
-  rename(year = time)
-
-length(unique(lifeExp$geo))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE4OVxuIn0= -->
-<pre><code>[1] 189</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observasjoner, tabellen inneholder tre ulike variabler; land, tid og populasjon.</p>
-</div>
-<div id="spørsmål-11" class="section level1">
-<h1>Spørsmål 11</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ19jKVxuYGBgIn0= -->
@@ -1997,6 +1945,120 @@ length(unique(lifeExp$geo))</code></pre>
 [19] &quot;unicode_region_subtag&quot;  &quot;world_4region&quot;          &quot;world_6region&quot;         
 [22] &quot;continent&quot;             </code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jIDwtIGdfYyAlPiVcbiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGlzbzMxNjZfMV9hbHBoYTMsIG1haW5fcmVsaWdpb25fMjAwOCx1bl9zZGdfcmVnaW9uLCB3b3JsZF80cmVnaW9uLCBjb250aW5lbnQsIHdvcmxkXzZyZWdpb24sKSU+JVxuICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoXCJjb3VudHJ5XCIgPSBcImdlb1wiKSklPiVcbiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKGxpZmVfZXhwZWN0YW5jeV95ZWFycykpKSU+JVxuICBmaWx0ZXIoeWVhcjxcIjIwMjAtMDEtMDFcIilcbmBgYCJ9 -->
+<pre class="r"><code>g_c &lt;- g_c %&gt;%
+  select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%&gt;%
+  left_join(lifeExp, by =c(&quot;country&quot; = &quot;geo&quot;))%&gt;%
+  filter(!(is.na(year)&amp; is.na(life_expectancy_years)))%&gt;%
+  filter(year&lt;&quot;2020-01-01&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Her har vi valgt ut ti varaibler fra datasettet.</p>
+</div>
+<div id="spørsmål-9" class="section level1">
+<h1>spørsmål 9</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX21pbiA8LSBnX2MgJT4lXG4gIGdyb3VwX2J5KGNvdW50cnkpICU+JVxuICBzdW1tYXJpc2UoeWVhcl9taW4gPSBtaW4oeWVhcikpXG5cbmdfY19taW4gJT4lIFxuICBjb3VudChtaW5feWVhciA9IGdfY19taW4keWVhcl9taW4pXG5gYGAifQ== -->
+<pre class="r"><code>g_c_min &lt;- g_c %&gt;%
+  group_by(country) %&gt;%
+  summarise(year_min = min(year))
+
+g_c_min %&gt;% 
+  count(min_year = g_c_min$year_min)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJTMDdETUJCMW5VOXBwRlpJYkZqMkFtVERoZ09VcnRpQVFPb09wcTFiR2FWMlpGdHQyWEV1VnB5SUl5U000NHpVMkpJekw4L3p4bS9HTDR2VmZiRXFHR01KUzNFbkdVS1d2YjB1N3g0WVN6bitqUEJnNHVNWmsyNFFJSm5NZlB6OWUvNWdnelVRWkpzS3JFVndmVUdtQzNBQ1k0TjdHb3F4bis3NlNLemdJRWpNZS9McUlOWDdsd0JEbGxTa21oaDlLa25abGYvR1Q5dTJUVWprYldTbjJJS0RjbWRRRWt3TnlvMTE3YVJXV0l6N3h2TklQRElSY2F2WFZwZ2oyRSt0aEpuRGNmNGtkK0x4WFB1YnVyeXdMdkcweDN5SXZZK0UzT1o5L1Z5b3ZWU0NSbFRCV2xSa0ZYdTJzS2V6R1E2aW0wTlpHNmtjZFl1c0xaMTJRTEppb3l0aXdxTTAvejMwUllBVEFnQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["min_year"],"name":[1],"type":["date"],"align":["right"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1800-01-01","2":"186"},{"1":"1970-01-01","2":"3"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoZ19jX21pbiR5ZWFyX21pbilcbmBgYCJ9 -->
+<pre class="r"><code>table(g_c_min$year_min)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4xODAwLTAxLTAxIDE5NzAtMDEtMDEgXG4gICAgICAgMTg2ICAgICAgICAgIDMgXG4ifQ== -->
+<pre><code>
+1800-01-01 1970-01-01 
+       186          3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Vi kan se at det er tre land som startet obsevasjonene i 1970, og 186 land som startet observasjonene i 1800.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX21pbiAlPiVcbiAgZmlsdGVyKHllYXJfbWluID09XCIxOTcwLTAxLTAxXCIpXG5gYGAifQ== -->
+<pre class="r"><code>g_c_min %&gt;%
+  filter(year_min ==&quot;1970-01-01&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUEzVlE3VXJETUJUTjBzYTV3cWJnYzdSL1JQQUJoZzhnQ3ZzbjF6YTZZbm96MGhUZFAxL2MxWnMyRnpSb0lNbkp1ZWZjajl4dmQ5ZkZyaEJDWkNLbm5TbUNRajArM0pXM1F1U1NIZ3NLck1MOVFhSXJBb0c4akk0UXlBQWJoazBIREx1OW9YTXpDZjlkdnlxbzJrRGZ4K3hNNWx2d211NVRLa2JvTkl0bEpKZTFIZEM3WTN5ZUh6VzRwNjdGeEx0eTlyMWkvenI0UCtrWXgvRnJGc294YWFKb3dFUDE0c2p5Unl0TGUvQ3RSVW9tdy8rb3hMeHdDWEV4WUNqZWxQVit3TGZ5SmhTWXd2TmFSNXo5d0hJdW1YRmpLcVk2MC9qYW91WS9NZkNzVFh4c2FNaHB4dXJnV3ZROENiRjk1YTBIMWhXMU5jeE1zNG5UTjRIQytwSVdBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year_min"],"name":[2],"type":["date"],"align":["right"]}],"data":[{"1":"and","2":"1970-01-01"},{"1":"dma","2":"1970-01-01"},{"1":"mhl","2":"1970-01-01"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Her har vi funnet de tre landene som startet observasjonene i 1970.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nX2NfbWluIDwtIGdfY19taW4gJT4lIFxuICBsZWZ0X2pvaW4oZ19jLFxuICAgICAgICAgICAgYnkgPSBcImNvdW50cnlcIikgJT4lIFxuICBmaWx0ZXIoeWVhcl9taW4gPT0gXCIxOTcwLTAxLTAxXCIpXG5cbnRpYmJsZShjb3VudHJ5PXVuaXF1ZShnX2NfbWluJG5hbWUpKVxuYGBgIn0= -->
+<pre class="r"><code>
+g_c_min &lt;- g_c_min %&gt;% 
+  left_join(g_c,
+            by = &quot;country&quot;) %&gt;% 
+  filter(year_min == &quot;1970-01-01&quot;)
+
+tibble(country=unique(g_c_min$name))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVF3V29DTVJDZFhZM2JEYlFJL2tCL29IdngwcXNnQlErOUZBdGVwN3ZiR29nVFNTSzF0LzU0WFdkalFpR0hKUE5lNXIzTXk5dDZ0NVE3Q1FBVG1QS2FDQzVCdkc5Zm5wNEJwaVdEZ2kvcThUeHoweUlRQVBPb0dDK3FGWFhHV296d2JtME9pbFNiOFB3VnJkdWoxbzhicDVFNmwva0t3a1B2b21jaXE5YWN5TnVmckxlMjVydEovZmU4eWwvZWhtSDR5MDFialM0M2xSMTZiRDR0NnhsZE1rbGxqbDRaWWxFNXBoU1p1TEFaVWQ5R1ZHRVdHZjhGNGx4RitKLy91cmc5Vmc3UlJFU1RXVTlmaXZvMHRjYVBYa2Z3d0ZsRDFPWm9GZm1VZ1ZuWGVPTXg5Y25XNk1TRVZIQzVBbFI5dFdiV0FRQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"Andorra"},{"1":"Dominica"},{"1":"Marshall Islands"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5gYGAifQ== -->
+<pre class="r"><code>NA
+NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I oppgave 9 de tre navnene (Andorra, Dominica, Marshall Island) som har de korteste seriene av life expectancy.</p>
+</div>
+<div id="spørsmål-10" class="section level1">
+<h1>Spørsmål 10</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jX3BvcCA8LSByZWFkX2NzdihcIkRhdGEvZGRmLS1nYXBtaW5kZXItLXN5c3RlbWFfZ2xvYmFsaXMtbWFzdGVyL2NvdW50cmllcy1ldGMtZGF0YXBvaW50cy9kZGYtLWRhdGFwb2ludHMtLXBvcHVsYXRpb25fdG90YWwtLWJ5LS1nZW8tLXRpbWUuY3N2XCIsXG5jb2xfdHlwZXMgPWNvbHModGltZSA9Y29sX2RhdGUoZm9ybWF0ID0gXCIlWVwiKSkpXG5cbmdfYyA8LSBnX2MlPiVcbiAgbGVmdF9qb2luKGdfY19wb3AsIGJ5ID1jKFwiY291bnRyeVwiID0gXCJnZW9cIiwgXCJ5ZWFyXCIgPSBcInRpbWVcIikpXG5gYGAifQ== -->
+<pre class="r"><code>g_c_pop &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--population_total--by--geo--time.csv&quot;,
+col_types =cols(time =col_date(format = &quot;%Y&quot;)))
+
+g_c &lt;- g_c%&gt;%
+  left_join(g_c_pop, by =c(&quot;country&quot; = &quot;geo&quot;, &quot;year&quot; = &quot;time&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Denne viser oss hvordan populasjonen øker over tid, ved å se på 59 297 observasjoner, tabellen inneholder tre ulike variabler; land, tid og populasjon.</p>
+</div>
+<div id="spørsmål-11" class="section level1">
+<h1>Spørsmål 11</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudV9wb3AgPC0gcmVhZF9jc3YoXCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS11cmJhbl9wb3B1bGF0aW9uLS1ieS0tZ2VvLS10aW1lLmNzdlwiLFxuY29sX3R5cGVzID1jb2xzKHRpbWUgPWNvbF9kYXRlKGZvcm1hdCA9IFwiJVlcIikpKVxuYGBgIn0= -->
+<pre class="r"><code>u_pop &lt;- read_csv(&quot;Data/ddf--gapminder--systema_globalis-master/countries-etc-datapoints/ddf--datapoints--urban_population--by--geo--time.csv&quot;,
+col_types =cols(time =col_date(format = &quot;%Y&quot;)))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -2024,34 +2086,135 @@ col_types =cols(time =col_date(format = &quot;%Y&quot;)))</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ19jKVxuYGBgIn0= -->
 <pre class="r"><code>names(g_c)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImNvdW50cnlcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIm5hbWVcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFszXSBcImlzbzMxNjZfMV9hbHBoYTNcIiAgICAgICAgICAgICAgICAgICBcIm1haW5fcmVsaWdpb25fMjAwOFwiICAgICAgICAgICAgICAgIFxuIFs1XSBcInVuX3NkZ19yZWdpb25cIiAgICAgICAgICAgICAgICAgICAgICBcIndvcmxkXzRyZWdpb25cIiAgICAgICAgICAgICAgICAgICAgIFxuIFs3XSBcImNvbnRpbmVudFwiICAgICAgICAgICAgICAgICAgICAgICAgICBcIndvcmxkXzZyZWdpb25cIiAgICAgICAgICAgICAgICAgICAgIFxuIFs5XSBcInllYXJcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcImxpZmVfZXhwZWN0YW5jeV95ZWFyc1wiICAgICAgICAgICAgIFxuWzExXSBcInBvcHVsYXRpb25fdG90YWxcIiAgICAgICAgICAgICAgICAgICBcImdkcHBlcmNhcGl0YV91c19pbmZsYXRpb25fYWRqdXN0ZWRcIlxuIn0= -->
-<pre><code> [1] &quot;country&quot;                            &quot;name&quot;                              
- [3] &quot;iso3166_1_alpha3&quot;                   &quot;main_religion_2008&quot;                
- [5] &quot;un_sdg_region&quot;                      &quot;world_4region&quot;                     
- [7] &quot;continent&quot;                          &quot;world_6region&quot;                     
- [9] &quot;year&quot;                               &quot;life_expectancy_years&quot;             
-[11] &quot;population_total&quot;                   &quot;gdppercapita_us_inflation_adjusted&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>I oppgave 10, 11 og 12 har vi lagt til populasjon, inflasjon urban populasjon i gdp datasettet.</p>
 </div>
 <div id="spørsmål-13" class="section level1">
 <h1>Spørsmål 13</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jIDwtIGdfYyAlPiVcbiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGlzbzMxNjZfMV9hbHBoYTMsIG1haW5fcmVsaWdpb25fMjAwOCx1bl9zZGdfcmVnaW9uLCB3b3JsZF80cmVnaW9uLCBjb250aW5lbnQsIHdvcmxkXzZyZWdpb24sKSU+JVxuICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoXCJjb3VudHJ5XCIgPSBcImdlb1wiKSklPiVcbiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKGxpZmVfZXhwZWN0YW5jeV95ZWFycykpKSU+JVxuICBmaWx0ZXIoeWVhcjxcIjIwMjAtMDEtMDFcIilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ19jIDwtIGdfYyAlPiVcbiAgcmVuYW1lKFwibGlmZUV4cFwiID0gXCJsaWZlX2V4cGVjdGFuY3lfeWVhcnNcIikgJT4lXG4gIHJlbmFtZShcInBvcFwiID0gXCJwb3B1bGF0aW9uX3RvdGFsXCIpICU+JVxuICByZW5hbWUoXCJnZHBQZXJjYXBcIiA9IFwiZ2RwcGVyY2FwaXRhX3VzX2luZmxhdGlvbl9hZGp1c3RlZFwiKVxuYGBgIn0= -->
 <pre class="r"><code>g_c &lt;- g_c %&gt;%
-  select(country, name, iso3166_1_alpha3, main_religion_2008,un_sdg_region, world_4region, continent, world_6region,)%&gt;%
-  left_join(lifeExp, by =c(&quot;country&quot; = &quot;geo&quot;))%&gt;%
-  filter(!(is.na(year)&amp; is.na(life_expectancy_years)))%&gt;%
-  filter(year&lt;&quot;2020-01-01&quot;)</code></pre>
+  rename(&quot;lifeExp&quot; = &quot;life_expectancy_years&quot;) %&gt;%
+  rename(&quot;pop&quot; = &quot;population_total&quot;) %&gt;%
+  rename(&quot;gdpPercap&quot; = &quot;gdppercapita_us_inflation_adjusted&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudDEgPC0gcGFzdGUoc2VxKDE5NjIsIDIwMTcsIGJ5ID0gNSksIFwiMDEtMDFcIiwgc2VwID0gXCItXCIpICU+JSBwYXJzZV9kYXRlKGZvcm1hdCA9IFwiJVktJW0tJWRcIilcbm15X2dhcG1pbmRlciA8LSBnX2MgJT4lXG4gIGZpbHRlcih5ZWFyICVpbiUgdDEpICU+JVxuICBzZWxlY3QobmFtZSwgY29udGluZW50LCB5ZWFyLCBsaWZlRXhwLCBwb3AsIGdkcFBlcmNhcCkgJT4lXG4gIHJlbmFtZShcImNvdW50cnlcIiA9IFwibmFtZVwiKVxuYGBgIn0= -->
+<pre class="r"><code>t1 &lt;- paste(seq(1962, 2017, by = 5), &quot;01-01&quot;, sep = &quot;-&quot;) %&gt;% parse_date(format = &quot;%Y-%m-%d&quot;)
+my_gapminder &lt;- g_c %&gt;%
+  filter(year %in% t1) %&gt;%
+  select(name, continent, year, lifeExp, pop, gdpPercap) %&gt;%
+  rename(&quot;country&quot; = &quot;name&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IE11c3Qgc3Vic2V0IGNvbHVtbnMgd2l0aCBhIHZhbGlkIHN1YnNjcmlwdCB2ZWN0b3IuXG54IFN1YnNjcmlwdCBoYXMgdGhlIHdyb25nIHR5cGUgYHNwZWNfdGJsX2RmPFxuICBnZW8gICAgICAgICAgICAgICAgICA6IGNoYXJhY3RlclxuICB5ZWFyICAgICAgICAgICAgICAgICA6IGRhdGVcbiAgbGlmZV9leHBlY3RhbmN5X3llYXJzOiBkb3VibGVcbj5gLlxu4oS5IEl0IG11c3QgYmUgbnVtZXJpYyBvciBjaGFyYWN0ZXIuXG5SdW4gYHJsYW5nOjpsYXN0X2Vycm9yKClgIHRvIHNlZSB3aGVyZSB0aGUgZXJyb3Igb2NjdXJyZWQuXG4ifQ== -->
+<pre><code>Error: Must subset columns with a valid subscript vector.
+x Subscript has the wrong type `spec_tbl_df&lt;
+  geo                  : character
+  year                 : date
+  life_expectancy_years: double
+&gt;`.
+ℹ It must be numeric or character.
+Run `rlang::last_error()` to see where the error occurred.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKG15X2dhcG1pbmRlcilcbmBgYCJ9 -->
+<pre class="r"><code>dim(my_gapminder)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIyNjIgICAgNlxuIn0= -->
+<pre><code>[1] 2262    6</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Etter å ha filtrer årene, kan vi se at vi får 2262 observasjoner fordelt på seks variabler.</p>
+</div>
+<div id="spørsmål-14" class="section level1">
+<h1>Spørsmål 14</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfZ2FwbWluZGVyXzE5NjIgPC0gbXlfZ2FwbWluZGVyICU+JVxuICBncm91cF9ieShjb3VudHJ5KSAlPiUgXG4gIGZpbHRlcighaXMubmEoZ2RwUGVyY2FwKSkgJT4lXG4gIGZpbHRlcih5ZWFyID09IFwiMTk2Mi0wMS0wMVwiKVxubGVuZ3RoKHVuaXF1ZShteV9nYXBtaW5kZXJfMTk2MiRjb3VudHJ5KSlcbmBgYCJ9 -->
+<pre class="r"><code>my_gapminder_1962 &lt;- my_gapminder %&gt;%
+  group_by(country) %&gt;% 
+  filter(!is.na(gdpPercap)) %&gt;%
+  filter(year == &quot;1962-01-01&quot;)
+length(unique(my_gapminder_1962$country))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDkwXG4ifQ== -->
+<pre><code>[1] 90</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Her kan vi se at det er 90 land som startet i 1962 har data fra gdpPercap.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfZ2FwbWluZGVyXzE5NjIgJT4lXG5kaXN0aW5jdChjb3VudHJ5LCBjb250aW5lbnQpICU+JVxuZ3JvdXBfYnkoY29udGluZW50KSAlPiVcbmNvdW50KCkgJT4lXG5rYWJsZSgpXG5gYGAifQ== -->
+<pre class="r"><code>my_gapminder_1962 %&gt;%
+distinct(country, continent) %&gt;%
+group_by(continent) %&gt;%
+count() %&gt;%
+kable()</code></pre>
+<!-- rnb-source-end -->
+<p>
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">continent</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Africa</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Americas</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="left">Asia</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">Europe</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">Oceania</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+ <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbmBgYCJ9 --></p>
+<pre class="r"><code>NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Her kan vi se at det er 30 land i Afrika, 25 land i Amerika, Asia 17, Europa 15 og 3 land i oseania.</p>
+</div>
+<div id="spørsmål-15" class="section level1">
+<h1>Spørsmål 15</h1>
+</div>
+<div id="spørsmål-16" class="section level1">
+<h1>Spørsmål 16</h1>
+</div>
+<div id="spørsmål-17" class="section level1">
+<h1>Spørsmål 17</h1>
+<p>```</p>
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyIHNldHVwLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeSh0aWJibGUpCmxpYnJhcnkocmVhZHIpCmBgYAoKIyBTcMO4cnNtw6VsIDEgCgpGaWxlbiBkZGZfY29uY2VwdHMuY3N2IGlubmVob2xkZXIgYWxsIG11bGlnIGluZm9ybWFzam9uIG9nIGlra2UgZGF0YXNldHQsIG1lbiA1OTYgYmVza3JpdmVsc2VyLiAKTWFuIGthbiBmb3IgZWtzZW1wZWwgc2UgYXQgZGUgaGFyIGJlc2tyaXZlbHNlciBhdiBhbGRlciBhdiBmw7hyc3RlIGVrdGVza2FwLCBhcmJlaWRzbGVkaWdoZXQsIHN5a2RvbSwgZMO4ZHNmYWxsIG9nIGFsa29ob2xrb25zdW0uIAoKIyBTcMO4cnNtw6VsIDIKCkZpbGVuIGRkZi0tZW50aXRpZXMtZ2VvLS1jb3VudHJ5LmNzdiBnaXIgb3NzIGV0IGluYmxpa2sgaSB1bGlrZSBsYW5kLCBpbm50ZWt0ZW5zZ3J1cHBlcmluZ2VyLCBodmlsa2VuIHJlbGlnaW9uIGRlIHRpbGjDuHJlciwgYW5uZW4gZ2VvZ3JhZmlzayBpbmZvcm1hanNvbiBzb20gZm9yIGVrc2VtcGVsIHN0w7hycmVsc2UgcMOlIGxhbmRldCBvZyBsb2thc2pvbiwgYnJlZGRlZ3JhZGVyIG9zdi4gCgojIFNww7hyc23DpWwgMyAKCiBGaWxlbiBkZmYtZ2FwbWluZGVyIGlubmVob2xkZXIgZW4gdGFiZWxsIG92ZXIgcmVnaW9uZW5lIHNvbSBlciBtZWQgaSBGTi4KIAojIFNww7hyc23DpWwgNCAKIApgYGB7ciBnX2N9CmxpYnJhcnkocmVhZHIpCmdfYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvZGRmLS1lbnRpdGllcy0tZ2VvLS1jb3VudHJ5LmNzdiIpCmFzX3RpYmJsZShnX2MpCgpgYGAKCgpgYGB7ciBjb250aW5lbnRzfQpnX2MgPC0gZ19jICU+JQogIG11dGF0ZShjb250aW5lbnQgPSBjYXNlX3doZW4oCiAgICAgd29ybGRfNHJlZ2lvbiA9PSAiYXNpYSIgJiB1bl9zZGdfcmVnaW9uICVpbiUgYygidW5fYXVzdHJhbGlhX2FuZF9uZXdfemVhbGFuZCIsICJ1bl9vY2VhbmlhX2V4Y19hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIikgfiAiT2NlYW5pYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICAiYXNpYSIgJiAhKHVuX3NkZ19yZWdpb24gJWluJSBjKCJ1bl9hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIiwgInVuX29jZWFuaWFfZXhjX2F1c3RyYWxpYV9hbmRfbmV3X3plYWxhbmQiKSkgfiAiQXNpYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhZnJpY2EiIH4gIkFmcmljYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhbWVyaWNhcyIgfiAiQW1lcmljYXMiLAogICAgd29ybGRfNHJlZ2lvbiA9PSAgImV1cm9wZSIgfiAiRXVyb3BlIikKICApICU+JQogZmlsdGVyKCFpcy5uYShpc28zMTY2XzFfYWxwaGEzKSkKYGBgCiAKIyBTcMO4cnNtw6VsIDUKYGBge3IgY291bnRyaWVzfQpsZW5ndGgodW5pcXVlKGdfYyRjb3VudHJ5KSkKYGBgCgpEZXQgZXIgbsOlIDI0NyBsYW5kLiAKVGlkbGlnZXJlIDI3MyBtZW4gdmlsIHZhbGd0ZSDDpSBmaWx0cmVyZSB1dCB1dGRhdGVydGUgbGFuZC4gCgojIFNww7hyc23DpWwgNgoKYGBge3IgY291bnRyaWVzX2luX2VhY2hfY29udGluZW50LCBtZXNzYWdlPUZBTFNFfQpnX2MgJT4lCiAgZ3JvdXBfYnkoY29udGluZW50KSAlPiUKICBzdW1tYXJpc2UoY291bnQgPSBsZW5ndGgodW5pcXVlKGNvdW50cnkpKSkKCmBgYApTb20gdmkga2FuIGxlc2UgYXYgaSB0YWJlbGxlbiBvdmVuZm9yLCBlciBkZXQgNTkgbGFuZCBpIEFmcmlrYSwgNTUgbGFuZCBpIEFtZXJpa2EsIDQ3IGxhbmQgaSBBc2lhLCA1OCBsYW5kIGkgRXVyb3BhIG9nIDI4IGxhbmQgaSBPc2VhbmlhIHNvbSBlciBpbnZvbHZlcnRlIGkgZGF0YXNldHRldC4gCgoKIyBTcMO4cnNtw6VsIDcKCmBgYHtyLCBMYWd0IHRpbCBlbiBueSB2YXJpYWJlbCB9CmxpZmVFeHAgPC1yZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tbGlmZV9leHBlY3RhbmN5X3llYXJzLS1ieS0tZ2VvLS10aW1lLmNzdiIsY29sX3R5cGVzID1jb2xzKHRpbWUgPWNvbF9kYXRlKGZvcm1hdCA9ICIlWSIpKSkKCgpsaWZlRXhwIDwtIGxpZmVFeHAlPiUKICByZW5hbWUoeWVhciA9IHRpbWUpCgpsZW5ndGgodW5pcXVlKGxpZmVFeHAkZ2VvKSkKYGBgCkRldCBlciAxODkgbGFuZCBzb20gaGFyIGluZm9ybWFzam9uIG9tIGxpZmUgRXhwZWN0YW5jeS4KCgojIHNww7hyc23DpWwgOAoKYGBge3IsVmFyaWFibGVyIGkgZ19jfQpuYW1lcyhnX2MpCmBgYAoKCmBgYHtyLCB2YWxndCB1dCAxMCB2YXJpYWJsZXIgfQpnX2MgPC0gZ19jICU+JQogIHNlbGVjdChjb3VudHJ5LCBuYW1lLCBpc28zMTY2XzFfYWxwaGEzLCBtYWluX3JlbGlnaW9uXzIwMDgsdW5fc2RnX3JlZ2lvbiwgd29ybGRfNHJlZ2lvbiwgY29udGluZW50LCB3b3JsZF82cmVnaW9uLCklPiUKICBsZWZ0X2pvaW4obGlmZUV4cCwgYnkgPWMoImNvdW50cnkiID0gImdlbyIpKSU+JQogIGZpbHRlcighKGlzLm5hKHllYXIpJiBpcy5uYShsaWZlX2V4cGVjdGFuY3lfeWVhcnMpKSklPiUKICBmaWx0ZXIoeWVhcjwiMjAyMC0wMS0wMSIpCmBgYAoKCiMgc3DDuHJzbcOlbCA5CgpgYGB7ciwgb2JzZXJ2YXNqb25lciBhdiBMaWZlRXhwLCBtZXNzYWdlPUZBTFNFfQpnX2NfbWluIDwtIGdfYyAlPiUKICBncm91cF9ieShjb3VudHJ5KSAlPiUKICBzdW1tYXJpc2UoeWVhcl9taW4gPSBtaW4oeWVhcikpCgp0YWJsZShnX2NfbWluJHllYXJfbWluKQoKCgpgYGAKCgojIFNww7hyc23DpWwgMTAKCmBgYHtyfQpnX2NfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS1wb3B1bGF0aW9uX3RvdGFsLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCgpnX2MgPC0gZ19jJT4lCiAgbGVmdF9qb2luKGdfY19wb3AsIGJ5ID1jKCJjb3VudHJ5IiA9ICJnZW8iLCAieWVhciIgPSAidGltZSIpKQpgYGAKRGVubmUgdmlzZXIgb3NzIGh2b3JkYW4gcG9wdWxhc2pvbmVuIMO4a2VyIG92ZXIgdGlkLCB2ZWQgw6Ugc2UgcMOlIDU5IDI5NyBvYnNlcnZhc2pvbmVyLCB0YWJlbGxlbiBpbm5laG9sZGVyIHRyZSB1bGlrZSB2YXJpYWJsZXI7IGxhbmQsIHRpZCBvZyBwb3B1bGFzam9uLiAKCiMgU3DDuHJzbcOlbCAxMQoKYGBge3J9CnVfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS11cmJhbl9wb3B1bGF0aW9uLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCmBgYAoKCgojIFNww7hyc23DpWwgMTIgCgpgYGB7ciBnZHBfZGF0YV9pbmZsYXRpb259CmdkcF9wYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tZ2RwcGVyY2FwaXRhX3VzX2luZmxhdGlvbl9hZGp1c3RlZC0tYnktLWdlby0tdGltZS5jc3YiLApjb2xfdHlwZXMgPWNvbHModGltZSA9Y29sX2RhdGUoZm9ybWF0ID0gIiVZIikpKQpgYGAKCmBgYHtyICBnY30KZ19jIDwtIGdfYyAlPiUKICBsZWZ0X2pvaW4oZ2RwX3BjLCBieT1jKCJjb3VudHJ5Ij0iZ2VvIiwgInllYXIiPSJ0aW1lIikpCgpgYGAKCmBgYHtyIGdkcF9kYXRhfQpuYW1lcyhnX2MpCmBgYAoKIyBTcMO4cnNtw6VsIDEzCmBgYHtyfQpnX2MgPC0gZ19jJT4lCiAgc2VsZWN0KGNvdW50cnksIG5hbWUsIGxpZmVFeHAsIGdkcF9wYywgeWVhciAsIGNvbnRpbmVudCwgKSU+JQogIGxlZnRfam9pbihsaWZlRXhwLCBieSA9YygiY291bnRyeSIgPSAiZ2VvIikpJT4lCiAgZmlsdGVyKCEoaXMubmEoeWVhcikmIGlzLm5hKCkpKSU+JQogIGZpbHRlcih5ZWFyPCIyMDIwLTAxLTAxIikKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKZGltKG15X2dhcG1pbmRlcikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCmBgYHtyIHNldHVwLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeSh0aWJibGUpCmxpYnJhcnkocmVhZHIpCmxpYnJhcnkoa25pdHIpCmBgYAoKIyBTcMO4cnNtw6VsIDEgCgpGaWxlbiBkZGZfY29uY2VwdHMuY3N2IGlubmVob2xkZXIgYWxsIG11bGlnIGluZm9ybWFzam9uIG9nIGlra2UgZGF0YXNldHQsIG1lbiA1OTYgYmVza3JpdmVsc2VyLiAKTWFuIGthbiBmb3IgZWtzZW1wZWwgc2UgYXQgZGUgaGFyIGJlc2tyaXZlbHNlciBhdiBhbGRlciBhdiBmw7hyc3RlIGVrdGVza2FwLCBhcmJlaWRzbGVkaWdoZXQsIHN5a2RvbSwgZMO4ZHNmYWxsIG9nIGFsa29ob2xrb25zdW0uIAoKIyBTcMO4cnNtw6VsIDIKCkZpbGVuIGRkZi0tZW50aXRpZXMtZ2VvLS1jb3VudHJ5LmNzdiBnaXIgb3NzIGV0IGluYmxpa2sgaSB1bGlrZSBsYW5kLCBpbm50ZWt0ZW5zZ3J1cHBlcmluZ2VyLCBodmlsa2VuIHJlbGlnaW9uIGRlIHRpbGjDuHJlciwgYW5uZW4gZ2VvZ3JhZmlzayBpbmZvcm1hanNvbiBzb20gZm9yIGVrc2VtcGVsIHN0w7hycmVsc2UgcMOlIGxhbmRldCBvZyBsb2thc2pvbiwgYnJlZGRlZ3JhZGVyIG9zdi4gCgojIFNww7hyc23DpWwgMyAKCiBGaWxlbiBkZmYtZ2FwbWluZGVyIGlubmVob2xkZXIgZW4gdGFiZWxsIG92ZXIgcmVnaW9uZW5lIHNvbSBlciBtZWQgaSBGTi4KIAojIFNww7hyc23DpWwgNCAKIApgYGB7ciBnX2N9CmxpYnJhcnkocmVhZHIpCmdfYyA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvZGRmLS1lbnRpdGllcy0tZ2VvLS1jb3VudHJ5LmNzdiIpCmFzX3RpYmJsZShnX2MpCgpgYGAKCgpgYGB7ciBjb250aW5lbnRzfQpnX2MgPC0gZ19jICU+JQogIG11dGF0ZShjb250aW5lbnQgPSBjYXNlX3doZW4oCiAgICAgd29ybGRfNHJlZ2lvbiA9PSAiYXNpYSIgJiB1bl9zZGdfcmVnaW9uICVpbiUgYygidW5fYXVzdHJhbGlhX2FuZF9uZXdfemVhbGFuZCIsICJ1bl9vY2VhbmlhX2V4Y19hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIikgfiAiT2NlYW5pYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICAiYXNpYSIgJiAhKHVuX3NkZ19yZWdpb24gJWluJSBjKCJ1bl9hdXN0cmFsaWFfYW5kX25ld196ZWFsYW5kIiwgInVuX29jZWFuaWFfZXhjX2F1c3RyYWxpYV9hbmRfbmV3X3plYWxhbmQiKSkgfiAiQXNpYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhZnJpY2EiIH4gIkFmcmljYSIsCiAgICB3b3JsZF80cmVnaW9uID09ICJhbWVyaWNhcyIgfiAiQW1lcmljYXMiLAogICAgd29ybGRfNHJlZ2lvbiA9PSAgImV1cm9wZSIgfiAiRXVyb3BlIikKICApICU+JQogZmlsdGVyKCFpcy5uYShpc28zMTY2XzFfYWxwaGEzKSkKYGBgCiAKIAojIFNww7hyc23DpWwgNQpgYGB7ciBsYW5kfQpsZW5ndGgodW5pcXVlKGdfYyRjb3VudHJ5KSkKYGBgCgpEZXQgZXIgbsOlIDI0NyBsYW5kLiAKVGlkbGlnZXJlIDI3MyBtZW4gdmlsIHZhbGd0ZSDDpSBmaWx0cmVyZSB1dCB1dGRhdGVydGUgbGFuZC4gCgojIFNww7hyc23DpWwgNgoKYGBge3IgY291bnRyaWVzX2luX2VhY2hfY29udGluZW50LCBtZXNzYWdlPUZBTFNFfQpnX2MgJT4lCiAgZ3JvdXBfYnkoY29udGluZW50KSAlPiUKICBzdW1tYXJpc2UoY291bnQgPSBsZW5ndGgodW5pcXVlKGNvdW50cnkpKSkKCmBgYApTb20gdmkga2FuIGxlc2UgYXYgaSB0YWJlbGxlbiBvdmVuZm9yLCBlciBkZXQgNTkgbGFuZCBpIEFmcmlrYSwgNTUgbGFuZCBpIEFtZXJpa2EsIDQ3IGxhbmQgaSBBc2lhLCA1OCBsYW5kIGkgRXVyb3BhIG9nIDI4IGxhbmQgaSBPc2VhbmlhIHNvbSBlciBpbnZvbHZlcnRlIGkgZGF0YXNldHRldC4gCgoKIyBTcMO4cnNtw6VsIDcKCmBgYHtyIExhZ3QgdGlsIGVuIG55IHZhcmlhYmVsIH0KbGlmZUV4cCA8LXJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS1saWZlX2V4cGVjdGFuY3lfeWVhcnMtLWJ5LS1nZW8tLXRpbWUuY3N2Iixjb2xfdHlwZXMgPWNvbHModGltZSA9Y29sX2RhdGUoZm9ybWF0ID0gIiVZIikpKQoKCmxpZmVFeHAgPC0gbGlmZUV4cCU+JQogIHJlbmFtZSh5ZWFyID0gdGltZSkKCmxlbmd0aCh1bmlxdWUobGlmZUV4cCRnZW8pKQpgYGAKRGV0IGVyIDE4OSBsYW5kIHNvbSBoYXIgaW5mb3JtYXNqb24gb20gbGlmZSBFeHBlY3RhbmN5LgoKCiMgc3DDuHJzbcOlbCA4CgpgYGB7ciBWYXJpYWJsZXIgaSBnX2N9Cm5hbWVzKGdfYykKYGBgCgoKYGBge3IgdmFsZ3QgdXQgMTAgdmFyaWFibGVyIH0KZ19jIDwtIGdfYyAlPiUKICBzZWxlY3QoY291bnRyeSwgbmFtZSwgaXNvMzE2Nl8xX2FscGhhMywgbWFpbl9yZWxpZ2lvbl8yMDA4LHVuX3NkZ19yZWdpb24sIHdvcmxkXzRyZWdpb24sIGNvbnRpbmVudCwgd29ybGRfNnJlZ2lvbiwpJT4lCiAgbGVmdF9qb2luKGxpZmVFeHAsIGJ5ID1jKCJjb3VudHJ5IiA9ICJnZW8iKSklPiUKICBmaWx0ZXIoIShpcy5uYSh5ZWFyKSYgaXMubmEobGlmZV9leHBlY3RhbmN5X3llYXJzKSkpJT4lCiAgZmlsdGVyKHllYXI8IjIwMjAtMDEtMDEiKQpgYGAKCkhlciBoYXIgdmkgdmFsZ3QgdXQgdGkgdmFyYWlibGVyIGZyYSBkYXRhc2V0dGV0LiAKCiMgc3DDuHJzbcOlbCA5CgpgYGB7ciBvYnNlcnZhc2pvbmVyIGF2IExpZmVFeHAsIG1lc3NhZ2U9RkFMU0V9CmdfY19taW4gPC0gZ19jICU+JQogIGdyb3VwX2J5KGNvdW50cnkpICU+JQogIHN1bW1hcmlzZSh5ZWFyX21pbiA9IG1pbih5ZWFyKSkKCmdfY19taW4gJT4lIAogIGNvdW50KG1pbl95ZWFyID0gZ19jX21pbiR5ZWFyX21pbikKYGBgCgpgYGB7ciBtaW5feWVhcn0KdGFibGUoZ19jX21pbiR5ZWFyX21pbikKCmBgYApWaSBrYW4gc2UgYXQgZGV0IGVyIHRyZSBsYW5kIHNvbSBzdGFydGV0IG9ic2V2YXNqb25lbmUgaSAxOTcwLCBvZyAxODYgbGFuZCBzb20gc3RhcnRldCBvYnNlcnZhc2pvbmVuZSBpIDE4MDAuIApgYGB7ciBnX2NfbWlufQpnX2NfbWluICU+JQogIGZpbHRlcih5ZWFyX21pbiA9PSIxOTcwLTAxLTAxIikKYGBgCkhlciBoYXIgdmkgZnVubmV0IGRlIHRyZSBsYW5kZW5lIHNvbSBzdGFydGV0IG9ic2VydmFzam9uZW5lIGkgMTk3MC4gCgoKCmBgYHtyIGNvdW50cmllc30KCmdfY19taW4gPC0gZ19jX21pbiAlPiUgCiAgbGVmdF9qb2luKGdfYywKICAgICAgICAgICAgYnkgPSAiY291bnRyeSIpICU+JSAKICBmaWx0ZXIoeWVhcl9taW4gPT0gIjE5NzAtMDEtMDEiKQoKdGliYmxlKGNvdW50cnk9dW5pcXVlKGdfY19taW4kbmFtZSkpCgoKYGBgCkkgb3BwZ2F2ZSA5IGRlIHRyZSBuYXZuZW5lIChBbmRvcnJhLCBEb21pbmljYSwgTWFyc2hhbGwgSXNsYW5kKSBzb20gaGFyIGRlIGtvcnRlc3RlIHNlcmllbmUgYXYgbGlmZSBleHBlY3RhbmN5LiAKCiMgU3DDuHJzbcOlbCAxMAoKYGBge3IgcG9wdWxhdGlvbn0KZ19jX3BvcCA8LSByZWFkX2NzdigiRGF0YS9kZGYtLWdhcG1pbmRlci0tc3lzdGVtYV9nbG9iYWxpcy1tYXN0ZXIvY291bnRyaWVzLWV0Yy1kYXRhcG9pbnRzL2RkZi0tZGF0YXBvaW50cy0tcG9wdWxhdGlvbl90b3RhbC0tYnktLWdlby0tdGltZS5jc3YiLApjb2xfdHlwZXMgPWNvbHModGltZSA9Y29sX2RhdGUoZm9ybWF0ID0gIiVZIikpKQoKZ19jIDwtIGdfYyU+JQogIGxlZnRfam9pbihnX2NfcG9wLCBieSA9YygiY291bnRyeSIgPSAiZ2VvIiwgInllYXIiID0gInRpbWUiKSkKYGBgCkRlbm5lIHZpc2VyIG9zcyBodm9yZGFuIHBvcHVsYXNqb25lbiDDuGtlciBvdmVyIHRpZCwgdmVkIMOlIHNlIHDDpSA1OSAyOTcgb2JzZXJ2YXNqb25lciwgdGFiZWxsZW4gaW5uZWhvbGRlciB0cmUgdWxpa2UgdmFyaWFibGVyOyBsYW5kLCB0aWQgb2cgcG9wdWxhc2pvbi4gCgojIFNww7hyc23DpWwgMTEKCmBgYHtyIHVyYmFuIHBvcHVsYXRpb259CnVfcG9wIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS11cmJhbl9wb3B1bGF0aW9uLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCmBgYAoKCiMgU3DDuHJzbcOlbCAxMiAKCmBgYHtyIGdkcF9kYXRhX2luZmxhdGlvbn0KZ2RwX3BjIDwtIHJlYWRfY3N2KCJEYXRhL2RkZi0tZ2FwbWluZGVyLS1zeXN0ZW1hX2dsb2JhbGlzLW1hc3Rlci9jb3VudHJpZXMtZXRjLWRhdGFwb2ludHMvZGRmLS1kYXRhcG9pbnRzLS1nZHBwZXJjYXBpdGFfdXNfaW5mbGF0aW9uX2FkanVzdGVkLS1ieS0tZ2VvLS10aW1lLmNzdiIsCmNvbF90eXBlcyA9Y29scyh0aW1lID1jb2xfZGF0ZShmb3JtYXQgPSAiJVkiKSkpCmBgYAoKYGBge3IgIGdjfQpnX2MgPC0gZ19jICU+JQogIGxlZnRfam9pbihnZHBfcGMsIGJ5PWMoImNvdW50cnkiPSJnZW8iLCAieWVhciI9InRpbWUiKSkKCmBgYAoKYGBge3IgZ2RwX2RhdGF9Cm5hbWVzKGdfYykKYGBgCgpJIG9wcGdhdmUgMTAsIDExIG9nIDEyIGhhciB2aSBsYWd0IHRpbCBwb3B1bGFzam9uLCBpbmZsYXNqb24gdXJiYW4gcG9wdWxhc2pvbiAgaSBnZHAgZGF0YXNldHRldC4KCgoKIyBTcMO4cnNtw6VsIDEzCmBgYHtyIHJlbmFtZX0KZ19jIDwtIGdfYyAlPiUKICByZW5hbWUoImxpZmVFeHAiID0gImxpZmVfZXhwZWN0YW5jeV95ZWFycyIpICU+JQogIHJlbmFtZSgicG9wIiA9ICJwb3B1bGF0aW9uX3RvdGFsIikgJT4lCiAgcmVuYW1lKCJnZHBQZXJjYXAiID0gImdkcHBlcmNhcGl0YV91c19pbmZsYXRpb25fYWRqdXN0ZWQiKQpgYGAKCgpgYGB7ciBteV9nYXBtaW5kZXJ9CnQxIDwtIHBhc3RlKHNlcSgxOTYyLCAyMDE3LCBieSA9IDUpLCAiMDEtMDEiLCBzZXAgPSAiLSIpICU+JSBwYXJzZV9kYXRlKGZvcm1hdCA9ICIlWS0lbS0lZCIpCm15X2dhcG1pbmRlciA8LSBnX2MgJT4lCiAgZmlsdGVyKHllYXIgJWluJSB0MSkgJT4lCiAgc2VsZWN0KG5hbWUsIGNvbnRpbmVudCwgeWVhciwgbGlmZUV4cCwgcG9wLCBnZHBQZXJjYXApICU+JQogIHJlbmFtZSgiY291bnRyeSIgPSAibmFtZSIpCgpgYGAKYGBge3J9CmRpbShteV9nYXBtaW5kZXIpCmBgYAoKRXR0ZXIgw6UgaGEgZmlsdHJlciDDpXJlbmUsIGthbiB2aSBzZSBhdCB2aSBmw6VyIDIyNjIgb2JzZXJ2YXNqb25lciBmb3JkZWx0IHDDpSBzZWtzIHZhcmlhYmxlci4gCgojIFNww7hyc23DpWwgMTQKYGBge3IgbGFuZF8xOTYyfQpteV9nYXBtaW5kZXJfMTk2MiA8LSBteV9nYXBtaW5kZXIgJT4lCiAgZ3JvdXBfYnkoY291bnRyeSkgJT4lIAogIGZpbHRlcighaXMubmEoZ2RwUGVyY2FwKSkgJT4lCiAgZmlsdGVyKHllYXIgPT0gIjE5NjItMDEtMDEiKQpsZW5ndGgodW5pcXVlKG15X2dhcG1pbmRlcl8xOTYyJGNvdW50cnkpKQpgYGAKSGVyIGthbiB2aSBzZSBhdCBkZXQgZXIgOTAgbGFuZCBzb20gc3RhcnRldCBpIDE5NjIgaGFyIGRhdGEgZnJhIGdkcFBlcmNhcC4KCmBgYHtyIGtvbnRpbmV0fQpteV9nYXBtaW5kZXJfMTk2MiAlPiUKZGlzdGluY3QoY291bnRyeSwgY29udGluZW50KSAlPiUKZ3JvdXBfYnkoY29udGluZW50KSAlPiUKY291bnQoKSAlPiUKa2FibGUoKQoKYGBgCkhlciBrYW4gdmkgc2UgYXQgZGV0IGVyIDMwIGxhbmQgaSBBZnJpa2EsIDI1IGxhbmQgaSBBbWVyaWthLCBBc2lhIDE3LCBFdXJvcGEgMTUgb2cgMyBsYW5kIGkgb3NlYW5pYS4gCgoKIyBTcMO4cnNtw6VsIDE1CgojIFNww7hyc23DpWwgMTYKCiMgU3DDuHJzbcOlbCAxNwoKYGBgCgo=</div>
 
 
 
