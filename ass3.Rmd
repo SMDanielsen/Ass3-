@@ -259,6 +259,34 @@ my_gapminder_2017 %>%
 ```
 
 # Spørsmål 16
+```{r 1962_log}
+my_gapminder_1962 %>% 
+  ggplot(my_gapminder_1962, mapping=aes(x=log(gdpPercap), y=lifeExp, size=pop, colour=continent)) +
+  geom_point()+
+  coord_cartesian(xlim = c(5, 12), ylim = c(30, 100))+
+  ggtitle("1962")+
+  theme(legend.position = "bottom")
+```
+
+```{r 1987_log}
+my_gapminder_1987 %>% 
+  ggplot(my_gapminder_1987, mapping=aes(x=log(gdpPercap), y=lifeExp, size=pop, colour=continent)) +
+  geom_point()+
+  coord_cartesian(xlim = c(5, 12), ylim = c(30, 100))+
+  ggtitle("1987")+
+  theme(legend.position = "bottom")
+
+```
+
+```{r 2017_log}
+my_gapminder_2017 %>% 
+  ggplot(my_gapminder_2017, mapping=aes(x=log(gdpPercap), y=lifeExp, size=pop, colour=continent)) +
+  geom_point()+
+  coord_cartesian(xlim = c(5, 12), ylim = c(30, 100))+
+  ggtitle("2017")+
+  theme(legend.position = "bottom")
+```
+
 
 # Spørsmål 17
 
