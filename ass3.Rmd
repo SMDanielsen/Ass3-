@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -253,40 +255,123 @@ my_gapminder_1962 %>%
 
 ```{r 1962}
 my_gapminder_1962 %>% 
-  ggplot(my_gapminder_1962, mapping=aes(x=gdpPercap, y=lifeExp, size=pop, colour=continent)) +
-  geom_point()+
-  ggtitle("1962")+
+  # dere har gelemt å plukke ut verdiene for år 1962
+  filter(year == "1962-01-01") %>% 
+  ggplot(my_gapminder_1962,
+         mapping = aes(
+           x = gdpPercap,
+           y = lifeExp,
+           size = pop,
+           colour = continent
+           )
+         ) +
+  coord_cartesian(ylim = c(38, 87), xlim = c(0,110000)) +
+  geom_point() +
+  ggtitle("1962") +
   theme(legend.position = "bottom")
 ```
 
 ```{r 1987}
 my_gapminder_1987 <- my_gapminder %>%
-  group_by(country) %>% 
+  group_by(country) %>%
   filter(!is.na(gdpPercap)) %>%
   filter(year == "1987-01-01")
 
-my_gapminder_1987 %>% 
+my_gapminder_1987 %>%
   ggplot(my_gapminder_1987, mapping=aes(x=gdpPercap, y=lifeExp, size=pop, colour=continent)) +
   geom_point()+
   ggtitle("1987")+
   theme(legend.position = "bottom")
 ```
 
+
 ```{r 2017}
+# OK, men jeg forslår å bruke my_gapminder_1962 og filter på
+# denne for årene 1962, 1987 og 2017. Gir mye mer clean code
+# alle dataene ligger jo i my_gapminder_1962 og er lette å hente ut
 my_gapminder_2017 <- my_gapminder %>%
-  group_by(country) %>% 
+  group_by(country) %>%
   filter(!is.na(gdpPercap)) %>%
   filter(year == "2017-01-01")
 
-my_gapminder_2017 %>% 
+my_gapminder_2017 %>%
   ggplot(my_gapminder_2017, mapping=aes(x=gdpPercap, y=lifeExp, size=pop, colour=continent)) +
   geom_point()+
   ggtitle("2017")+
   theme(legend.position = "bottom")
 ```
 
+
+## Hva jeg ville gjort 
+
+1. Bruker bare my_gapminder_1962 og plukker ut data for årene 1962, 1987 og 2017 fra denne vha `filter()`
+2. Setter aksene like i de tre figurene slik at det er lettere å se hva som skjer over tid
+
+```{r ag_1962}
+my_gapminder_1962 %>% 
+  # dere har gelemt å plukke ut verdiene for år 1962
+  filter(year == "1962-01-01") %>% 
+  ggplot(my_gapminder_1962,
+         mapping = aes(
+           x = gdpPercap,
+           y = lifeExp,
+           size = pop,
+           colour = continent
+           )
+         ) +
+  # lurt å sette aksene slik at de er like i de tre plottene
+  # ellers er det vanskelig å sammenligne
+  coord_cartesian(ylim = c(38, 87), xlim = c(0,110000)) +
+  geom_point() +
+  ggtitle("1962") +
+  theme(legend.position = "bottom")
+```
+
+```{r ag_1987}
+# Hvorfor ikke bare bruke my_gapminder_1962 og plukke
+# ut verdiene for år 1987? Mye enklere
+my_gapminder_1962 %>%
+  filter(year == "1987-01-01") %>%
+  ggplot(my_gapminder_1962,
+    mapping = aes(
+      x = gdpPercap,
+      y = lifeExp,
+      size = pop,
+      colour = continent
+    )
+  ) +
+  coord_cartesian(ylim = c(38, 87), xlim = c(0,110000)) +
+  geom_point() +
+  ggtitle("1987") +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+my_gapminder_1962 %>%
+  filter(year == "2017-01-01") %>%
+  ggplot(my_gapminder_1962,
+    mapping = aes(
+      x = gdpPercap,
+      y = lifeExp,
+      size = pop,
+      colour = continent
+    )
+  ) +
+  # lurt å sette aksene slik at de er like i de tre plottene
+  # ellers er det vanskelig å sammenligne
+  coord_cartesian(ylim = c(38, 87), xlim = c(0,110000)) +
+  # na.rm = TRUE så slipper vi advarsel for Venezuela
+  geom_point(na.rm = TRUE) + 
+  ggtitle("2017") +
+  theme(legend.position = "bottom")
+```
+
 # Spørsmål 16
+
 ```{r 1962_log}
+# my_gapminder_1962 inneholde data for hver femte år i perioden
+# 1962 til 2017. Dere må plukke ut data for 1962
+
 my_gapminder_1962 %>% 
   ggplot(my_gapminder_1962, mapping=aes(x=log(gdpPercap), y=lifeExp, size=pop, colour=continent)) +
   geom_point()+
