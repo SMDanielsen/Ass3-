@@ -1,0 +1,14 @@
+---
+title: "ag_comments"
+output: html_notebook
+---
+
+# Kommentarer
+
+1.  Fin besvarelse
+
+2.  Dere bør jobbe litt mer med formateringen av koden. Den blir lettere å lese hvis dere prøver å følge tidyverse standarden.
+
+3.  Bryt gjerne lange linjer etter hvert argument, dvs. etter et komma. Gjør koden mer oversiktelig og lettere å lese. Se min kode under "Hva jeg ville gjort" i dokumentet for et eksempel. Husk: Vær snill med ditt fremtidige jeg (og din stakkars lærer ;-))
+
+4.  På slutten blir det litt tull. Datasettet my_gapminder_1962 inneholder data for hvert 5. år i perioden 1962 til 2017 for de 90 landene. Dere trenger bare plukke ut data fra denne for årene 1962, 1987 og 2017 vha. en enkel filter kommando. Se mitt forslag.
